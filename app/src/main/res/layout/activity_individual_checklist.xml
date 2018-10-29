@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndividualChecklistActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TableRow
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/holo_orange_light"
+            tools:layout_editor_absoluteX="236dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <ImageButton
+            android:id="@+id/add_new_apt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/darker_gray"
+            tools:layout_editor_absoluteX="311dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/apt1"
+        android:layout_width="167dp"
+        android:layout_height="62dp"
+        android:text="@string/apt_address"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="80dp" />
+
+    <Button
+        android:id="@+id/done_adding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_done_add"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <LinearLayout
+        android:layout_width="251dp"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="144dp">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

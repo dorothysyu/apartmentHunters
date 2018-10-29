@@ -36,4 +36,19 @@
     <!-- Strings for the main apartment ranking page -->
     <string name="apt_description"> \@kaylien i didn\'t know what to do here because these
     are supposed to link with the individual apartments\?\? idk if i should just do dummy values here </string>
+    <string name="filter"> filter by:</string>
+
+    <!-- Strings for the apartment page -->
+    <string name="apt_address"> 753 Columbus Avenue, Apt. #3 Roxbury Crossing, MA 02120</string>
+    <string name="prompt_match"> match this apartment\'s features to your criteria checklist</string>
+    <string name="action_add_price"> add price</string>
+    <string name="prompt_add_landlord"> add landlord info</string>
+    <string name="prompt_extra_notes"> add extra notes</string>
+    <string name="prompt_add_photos"> add photos/videos</string>
+
+
+    <string name="action_done_add"> DONE</string>
+    <string name="back"> back</string>
+
+
 </resources>
