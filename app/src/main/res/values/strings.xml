@@ -22,8 +22,18 @@
     <string name="skip_add_roommates">Skip this step</string>
     <string name="title_activity_features_activity">features</string>
 
-   <!-- Strings related to checking off features -->
+    <!-- Strings related to checking off features -->
     <string name="checklist_prompt"> What features are you looking for in an apartment?</string>
-    <string name="prompt_add_feature"> add your own feature</string>
-    <string name="action_add_feature"> add feature</string>
+    <string name="prompt_add_feature"> add your own feature </string>
+    <string name="action_add_feature"> add feature </string>
+    <string name="continue_from_criteria"> Continue </string>
+
+    <!-- Strings related to selecting price range -->
+    <string name="prompt_price_range"> What\'s your price range for your total monthly rent?</string>
+    <string name="prompt_hi"> highest you and your roommates are willing to pay total</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- Strings for the main apartment ranking page -->
+    <string name="apt_description"> \@kaylien i didn\'t know what to do here because these
+    are supposed to link with the individual apartments\?\? idk if i should just do dummy values here </string>
 </resources>
