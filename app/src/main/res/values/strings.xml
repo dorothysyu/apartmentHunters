@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Apartment Hunters</string>
+    <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -10,6 +10,20 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+        completions."</string>
+    <string name="app_name">Apartment Hunters</string>
+
+    <!-- Strings related to add roommates -->
+    <string name="add_by_user">add by username</string>
+    <string name="add_roommate">-></string>
+    <string name="add_via_email">add via email</string>
+    <string name="add_via_phone">add via phone #</string>
+    <string name="group_exists">Already in a group?</string>
+    <string name="skip_add_roommates">Skip this step</string>
+    <string name="title_activity_features_activity">features</string>
+
+   <!-- Strings related to checking off features -->
+    <string name="checklist_prompt"> What features are you looking for in an apartment?</string>
+    <string name="prompt_add_feature"> add your own feature</string>
+    <string name="action_add_feature"> add feature</string>
 </resources>
