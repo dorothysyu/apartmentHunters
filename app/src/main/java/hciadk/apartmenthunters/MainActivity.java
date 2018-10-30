@@ -12,20 +12,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart(){
 
         super.onStart();
-        Button loginBtn = findViewById(R.id.email_sign_in_button);
-
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,
-                        AddRoommatesActivity.class));
-            }
-        });
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button doneBtn = findViewById(R.id.done_adding);
+
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(IndividualChecklistActivity.this,
+                        MapsActivity.class));
+            }
+        });
     }
 }
