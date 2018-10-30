@@ -19,7 +19,7 @@ public class IndividualChecklistActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(IndividualChecklistActivity.this,
-                        MainActivity.class));
+                        ApartmentEditActivity.class));
             }
         });
     }
