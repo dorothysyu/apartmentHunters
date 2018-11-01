@@ -23,7 +23,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AddRoommatesActivity.this,
-                        IndividualChecklistActivity.class));
+                        FeaturesActivity.class));
             }
         });
 
@@ -31,7 +31,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AddRoommatesActivity.this,
-                        IndividualChecklistActivity.class));
+                        FeaturesActivity.class));
             }
         });
     }
