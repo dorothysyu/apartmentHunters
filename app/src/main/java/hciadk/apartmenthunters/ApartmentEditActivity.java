@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class ApartmentEditActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apartment_edit);
 
         Button extraNotesBtn = findViewById(R.id.extra_notes);
+        ImageButton homeBtn = findViewById(R.id.home);
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,5 +35,23 @@ public class ApartmentEditActivity extends AppCompatActivity {
             }
         });
 
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ApartmentEditActivity.this,
+                        MainActivity.class));
+            }
+        });
+
+        Button backToMain = findViewById(R.id.back_to_main);
+
+        backToMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ApartmentEditActivity.this,
+                        MainActivity.class));
+            }
+        });
     }
 }

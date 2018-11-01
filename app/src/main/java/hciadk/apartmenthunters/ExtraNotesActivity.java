@@ -15,7 +15,7 @@ public class ExtraNotesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_extra_notes);
 
 
-        Button extraNotesBtn = findViewById(R.id.back);
+        Button extraNotesBtn = findViewById(R.id.back_to_ind_apt);
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override

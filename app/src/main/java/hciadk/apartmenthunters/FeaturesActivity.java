@@ -22,5 +22,15 @@ public class FeaturesActivity extends AppCompatActivity {
                         MainActivity.class));
             }
         });
+
+        Button backBtn = findViewById(R.id.back_to_roommates);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FeaturesActivity.this,
+                        AddRoommatesActivity.class));
+            }
+        });
     }
 }
