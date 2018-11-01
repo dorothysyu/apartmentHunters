@@ -17,17 +17,17 @@
     <TableRow
         android:id="@+id/nav"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="50dp">
+        <!--tools:layout_editor_absoluteX="0dp"-->
+        <!--tools:layout_editor_absoluteY="0dp">-->
 
         <ImageButton
             android:id="@+id/home"
             android:layout_width="49dp"
             android:layout_height="match_parent"
-            app:srcCompat="@android:color/holo_orange_light"
-            tools:layout_editor_absoluteX="236dp"
-            tools:layout_editor_absoluteY="8dp" />
+            app:srcCompat="@android:color/holo_orange_light"/>
+            <!--tools:layout_editor_absoluteX="236dp"-->
+            <!--tools:layout_editor_absoluteY="8dp" />-->
 
         <ImageButton
             android:id="@+id/add_new_apt"
@@ -49,23 +49,24 @@
         android:id="@+id/imageView"
         android:layout_width="162dp"
         android:layout_height="120dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="89dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="89dp"-->
+
 
     <TextView
         android:id="@+id/apt_description"
         android:layout_width="187dp"
         android:layout_height="75dp"
-        android:text="@string/apt_address"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="89dp" />
+        android:text="@string/apt_address"/>
+        <!--tools:layout_editor_absoluteX="190dp"-->
+        <!--tools:layout_editor_absoluteY="89dp" />-->
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="164dp">
+        android:layout_height="wrap_content">
+        <!--tools:layout_editor_absoluteX="186dp"-->
+        <!--tools:layout_editor_absoluteY="164dp">-->
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -95,24 +96,24 @@
         android:layout_width="253dp"
         android:layout_height="131dp"
         app:srcCompat="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="279dp"
         tools:srcCompat="@android:color/holo_orange_light" />
+        <!--tools:layout_editor_absoluteX="57dp"-->
+        <!--tools:layout_editor_absoluteY="279dp"-->
 
     <Button
         android:id="@+id/prompt_match"
         android:layout_width="232dp"
         android:layout_height="87dp"
-        android:text="@string/prompt_match"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="301dp" />
+        android:text="@string/prompt_match"/>
+        <!--tools:layout_editor_absoluteX="67dp"-->
+        <!--tools:layout_editor_absoluteY="301dp" />-->
 
     <Button
         android:id="@+id/extra_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prompt_extra_notes"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="447dp" />
+        android:text="@string/prompt_extra_notes"/>
+        <!--tools:layout_editor_absoluteX="220dp"-->
+        <!--tools:layout_editor_absoluteY="447dp" />-->
 
 </android.support.constraint.ConstraintLayout>

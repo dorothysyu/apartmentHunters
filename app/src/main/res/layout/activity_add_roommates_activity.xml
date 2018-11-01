@@ -25,25 +25,24 @@
         android:id="@+id/add_roommate"
         android:layout_width="91dp"
         android:layout_height="37dp"
-        android:text="@string/add_roommate"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:text="@string/add_roommate"/>
+        <!--tools:layout_editor_absoluteX="280dp"-->
+        <!--tools:layout_editor_absoluteY="0dp" />-->
 
     <Button
         android:id="@+id/add_via_email"
         android:layout_width="154dp"
         android:layout_height="49dp"
-        android:text="@string/add_via_email"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="115dp" />
+        android:text="@string/add_via_email"/>
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="115dp" -->
 
     <Button
         android:id="@+id/add_via_phone"
         android:layout_width="160dp"
         android:layout_height="46dp"
-        android:text="@string/add_via_phone"
-        tools:layout_editor_absoluteX="211dp"
-        tools:layout_editor_absoluteY="115dp" />
+        android:text="@string/add_via_phone"/>
+        tools:layout_editor_absoluteX="211dp"/>
 
     <EditText
         android:id="@+id/group_exists"
@@ -51,16 +50,16 @@
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/group_exists"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="232dp" />
+        android:text="@string/group_exists"/>
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="232dp" />-->
 
     <Button
         android:id="@+id/skip_add_roommates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/skip_add_roommates"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="231dp" />
+        android:text="@string/skip_add_roommates"/>
+        <!--tools:layout_editor_absoluteX="203dp"-->
+        <!--tools:layout_editor_absoluteY="231dp" />-->
 
 </android.support.constraint.ConstraintLayout>
