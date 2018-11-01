@@ -21,7 +21,9 @@
     <TableRow
         android:id="@+id/nav"
         android:layout_width="match_parent"
-        android:layout_height="54dp">
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent">
         <!--tools:layout_editor_absoluteX="0dp"-->
         <!--tools:layout_editor_absoluteY="0dp"-->
 
@@ -62,14 +64,16 @@
         android:layout_width="382dp"
         android:layout_height="388dp"
         android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="0dp"-->
         <!--tools:layout_editor_absoluteY="130dp">-->
 
         <TableRow
+            android:id="@+id/apt1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/apt1">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/rank_apt1"
@@ -90,14 +94,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/apt1_description"
+                    android:id="@+id/apt1_descr"
                     android:layout_width="236dp"
                     android:layout_height="86dp"
                     android:text="@string/apt_description"
                     android:textSize="10sp" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar2"
+                    android:id="@+id/ratingBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
@@ -112,13 +116,13 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/rank_apt1"
+                android:id="@+id/rank_apt2"
                 android:layout_width="21dp"
                 android:layout_height="29dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
-                android:id="@+id/apt1_pic"
+                android:id="@+id/apt2_pic"
                 android:layout_width="111dp"
                 android:layout_height="116dp"
                 app:srcCompat="@color/design_default_color_primary"
@@ -152,13 +156,13 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/rank_apt1"
+                android:id="@+id/rank_apt3"
                 android:layout_width="21dp"
                 android:layout_height="29dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
-                android:id="@+id/apt1_pic"
+                android:id="@+id/apt3_pic"
                 android:layout_width="111dp"
                 android:layout_height="116dp"
                 app:srcCompat="@color/design_default_color_primary"

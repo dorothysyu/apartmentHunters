@@ -10,8 +10,13 @@
         android:id="@+id/prompt_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:hint="@string/prompt_hi"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price_range_prompt" />
         <!--tools:layout_editor_absoluteX="16dp"-->
         <!--tools:layout_editor_absoluteY="336dp" />-->
 
@@ -19,14 +24,26 @@
         android:id="@+id/checklist_prompt"
         android:layout_width="374dp"
         android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="@string/checklist_prompt"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/add_feature"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:text="@string/action_add_feature"/>
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/action_add_feature"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="237dp" />
         <!--tools:layout_editor_absoluteX="233dp"-->
         <!--tools:layout_editor_absoluteY="213dp" -->
 
@@ -34,8 +51,11 @@
         android:id="@+id/price_range_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/prompt_price_range"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
         <!--tools:layout_editor_absoluteX="6dp"-->
         <!--tools:layout_editor_absoluteY="290dp"-->
 
@@ -43,14 +63,28 @@
         android:id="@+id/continue_from_criteria"
         android:layout_width="135dp"
         android:layout_height="48dp"
-        android:text="@string/continue_from_criteria"/>
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/continue_from_criteria"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
         <!--tools:layout_editor_absoluteX="125dp"-->
         <!--tools:layout_editor_absoluteY="417dp" />-->
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="368dp"
-        android:layout_height="446dp"
-        android:orientation="vertical">
+        android:layout_height="275dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/prompt_price"
+        app:layout_constraintTop_toBottomOf="@+id/checklist_prompt">
         <!--tools:layout_editor_absoluteX="6dp"-->
         <!--tools:layout_editor_absoluteY="49dp">-->
 
