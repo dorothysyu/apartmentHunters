@@ -106,16 +106,6 @@
         app:layout_constraintStart_toEndOf="@+id/group_exists"
         app:layout_constraintTop_toTopOf="@+id/group_exists" />
 
-    <Button
-        android:id="@+id/back_to_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <!--tools:layout_editor_absoluteX="203dp"-->
     <!--tools:layout_editor_absoluteY="231dp" />-->
 
