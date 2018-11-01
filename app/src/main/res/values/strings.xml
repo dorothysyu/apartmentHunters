@@ -29,8 +29,8 @@
     <string name="continue_from_criteria"> Continue </string>
 
     <!-- Strings related to selecting price range -->
-    <string name="prompt_price_range"> What\'s your price range for your total monthly rent?</string>
-    <string name="prompt_hi">Max price (for you and roommates together)</string>
+    <string name="prompt_price_range"> What\'s your price range for your total monthly rent (you + roommates)?</string>
+    <string name="prompt_hi">Max price</string>
     <string name="title_activity_maps">Map</string>
 
     <!-- Strings for the main apartment ranking page -->
