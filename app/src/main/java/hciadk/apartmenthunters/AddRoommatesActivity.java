@@ -26,7 +26,6 @@ public class AddRoommatesActivity extends AppCompatActivity {
         Button continueBtn = findViewById(R.id.add_roommate);
         Button addViaPhoneBtn = findViewById(R.id.add_via_phone);
         Button addViaEmailBtn = findViewById(R.id.add_via_email);
-        Button backBtn = findViewById(R.id.back_to_login);
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,14 +43,6 @@ public class AddRoommatesActivity extends AppCompatActivity {
             }
         });
 
-
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AddRoommatesActivity.this,
-                        LoginActivity.class));
-            }
-        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, USERS);

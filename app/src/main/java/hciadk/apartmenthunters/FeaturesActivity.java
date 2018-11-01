@@ -23,7 +23,7 @@ public class FeaturesActivity extends AppCompatActivity {
             }
         });
 
-        Button backBtn = findViewById(R.id.back_to_roommates);
+        Button backBtn = findViewById(R.id.back_to_ind_apt);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
