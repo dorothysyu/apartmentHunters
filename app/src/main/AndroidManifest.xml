@@ -23,13 +23,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".AddRoommatesActivity" />
+            android:label="@string/title_activity_login" />
+
+
+        <activity android:name=".AddRoommatesActivity"/>
         <activity android:name=".FeaturesActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -47,7 +44,12 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ApartmentEditActivity" />
+        <activity android:name=".ApartmentEditActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".IndividualChecklistActivity" />
         <activity android:name=".ExtraNotesActivity"></activity>
     </application>
