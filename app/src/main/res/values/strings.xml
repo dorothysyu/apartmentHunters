@@ -15,9 +15,9 @@
 
     <!-- Strings related to add roommates -->
     <string name="add_by_user">Add by username</string>
-    <string name="add_roommate">-></string>
-    <string name="add_via_email">Add via email</string>
-    <string name="add_via_phone">Add via phone #</string>
+    <string name="add_roommate">Continue</string>
+    <string name="add_by_email">Add by email</string>
+    <string name="add_by_phone">Add by phone</string>
     <string name="group_exists">Already in a group?</string>
     <string name="skip_add_roommates">Skip this step</string>
     <string name="title_activity_features_activity">Features</string>
@@ -25,7 +25,7 @@
     <!-- Strings related to checking off features -->
     <string name="checklist_prompt"> What features are you looking for in an apartment?</string>
     <string name="prompt_add_feature">Add your own feature </string>
-    <string name="action_add_feature">Add feature </string>
+    <string name="action_add_feature">Add</string>
     <string name="continue_from_criteria"> Continue </string>
 
     <!-- Strings related to selecting price range -->
