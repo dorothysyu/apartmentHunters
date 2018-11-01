@@ -5,50 +5,50 @@
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_invalid_password">Password too short</string>
+    <string name="error_incorrect_password">Incorrect password</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."</string>
     <string name="app_name">Apartment Hunters</string>
 
     <!-- Strings related to add roommates -->
-    <string name="add_by_user">add by username</string>
+    <string name="add_by_user">Add by username</string>
     <string name="add_roommate">-></string>
-    <string name="add_via_email">add via email</string>
-    <string name="add_via_phone">add via phone #</string>
+    <string name="add_via_email">Add via email</string>
+    <string name="add_via_phone">Add via phone #</string>
     <string name="group_exists">Already in a group?</string>
     <string name="skip_add_roommates">Skip this step</string>
-    <string name="title_activity_features_activity">features</string>
+    <string name="title_activity_features_activity">Features</string>
 
     <!-- Strings related to checking off features -->
     <string name="checklist_prompt"> What features are you looking for in an apartment?</string>
-    <string name="prompt_add_feature"> add your own feature </string>
-    <string name="action_add_feature"> add feature </string>
+    <string name="prompt_add_feature">Add your own feature </string>
+    <string name="action_add_feature">Add feature </string>
     <string name="continue_from_criteria"> Continue </string>
 
     <!-- Strings related to selecting price range -->
     <string name="prompt_price_range"> What\'s your price range for your total monthly rent?</string>
-    <string name="prompt_hi"> highest you and your roommates are willing to pay total</string>
+    <string name="prompt_hi">Max price (for you and roommates together)</string>
     <string name="title_activity_maps">Map</string>
 
     <!-- Strings for the main apartment ranking page -->
     <string name="apt_description"> \@kaylien i didn\'t know what to do here because these
     are supposed to link with the individual apartments\?\? idk if i should just do dummy values here </string>
-    <string name="filter"> filter by:</string>
+    <string name="filter">Filter by:</string>
 
     <!-- Strings for the apartment page -->
     <string name="apt_address"> 753 Columbus Avenue, Apt. #3 Roxbury Crossing, MA 02120</string>
-    <string name="prompt_match"> match this apartment\'s features to your criteria checklist</string>
-    <string name="action_add_price"> add price</string>
-    <string name="prompt_add_landlord"> add landlord info</string>
-    <string name="prompt_extra_notes"> add extra notes</string>
-    <string name="prompt_add_photos"> add photos/videos</string>
+    <string name="prompt_match">Compare to my checklist</string>
+    <string name="action_add_price">Add price</string>
+    <string name="prompt_add_landlord">Add landlord info</string>
+    <string name="prompt_extra_notes">Add extra notes</string>
+    <string name="prompt_add_photos">Add photos/videos</string>
 
 
     <string name="action_done_add"> DONE</string>
-    <string name="back"> back</string>
+    <string name="back">Back</string>
 
 
 </resources>
