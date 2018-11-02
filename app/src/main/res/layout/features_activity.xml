@@ -54,18 +54,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar5" />
 
-    <Button
-        android:id="@+id/add_feature"
-        android:layout_width="71dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="240dp"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="124dp"
-        android:text="@string/action_add_feature"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
-        <!--tools:layout_editor_absoluteX="233dp"-->
-        <!--tools:layout_editor_absoluteY="213dp" -->
 
     <TextView
         android:id="@+id/price_range_prompt"
@@ -148,7 +136,17 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_add_feature" />
 
+            <Button
+                android:id="@+id/add_feature"
+                android:layout_width="71dp"
+                android:layout_height="wrap_content"
+                android:text="@string/action_add_feature" />
+
         </android.support.design.widget.TextInputLayout>
+
+        <!--tools:layout_editor_absoluteX="233dp"-->
+        <!--tools:layout_editor_absoluteY="213dp" -->
+
 
     </LinearLayout>
 
