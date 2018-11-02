@@ -42,8 +42,8 @@
     <string name="title_activity_maps">Map</string>
 
     <!-- Strings for the main apartment ranking page -->
-    <string name="apt_description"> \@kaylien i didn\'t know what to do here because these
-    are supposed to link with the individual apartments\?\? idk if i should just do dummy values here </string>
+    <string name="apt2_address">1061 Tremont Street, Apt. #7 Roxbury Crossing, MA 02120</string>
+    <string name="apt3_address">569 Cunard Street, Apt. #1 Roxbury Crossing, MA 02120</string>
     <string name="filter">Filter by:</string>
 
     <!-- Strings for the apartment page -->
