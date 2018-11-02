@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class ExtraNotesActivity extends AppCompatActivity {
 

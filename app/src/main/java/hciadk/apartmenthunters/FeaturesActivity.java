@@ -44,6 +44,7 @@ public class FeaturesActivity extends AppCompatActivity {
                 String content = t.getText().toString(); //gets you the contents of edit text
                 CheckBox cb = new CheckBox(getApplicationContext());
                 cb.setText(content);
+                cb.setChecked(true);
                 ll.addView(cb);
                 reorder();
                 t.setText("");
