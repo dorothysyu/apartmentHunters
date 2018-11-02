@@ -22,11 +22,19 @@
         android:id="@+id/nav"
         android:layout_width="match_parent"
         android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent">
         <!--tools:layout_editor_absoluteX="0dp"-->
         <!--tools:layout_editor_absoluteY="0dp"-->
 
+
+        <Button
+            android:id="@+id/back_to_checklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
 
         <Button
             android:id="@+id/filter"
@@ -35,12 +43,6 @@
             android:text="@string/filter"
             tools:layout_editor_absoluteX="192dp"
             tools:layout_editor_absoluteY="0dp" />
-
-        <Button
-            android:id="@+id/back_to_checklist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/back" />
 
         <ImageButton
             android:id="@+id/home"
@@ -72,18 +74,25 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
 
         <TableRow
             android:id="@+id/apt1"
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
+            android:layout_width="330dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/apt2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="8dp">
+            app:layout_constraintVertical_bias="0.0">
 
             <ImageView
                 android:id="@+id/rank_apt1"
@@ -105,28 +114,92 @@
 
                 <TextView
                     android:id="@+id/apt1_descr"
-                    android:layout_width="236dp"
-                    android:layout_height="86dp"
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:text="@string/apt_description"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <RatingBar
                     android:id="@+id/ratingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/apt1_descr"
+                    app:layout_constraintVertical_bias="0.0" />
+            </android.support.constraint.ConstraintLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/apt2"
+            android:layout_width="330dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/apt3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/apt1">
+
+            <ImageView
+                android:id="@+id/rank_apt2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/apt2_pic"
+                android:layout_width="123dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@color/design_default_color_primary"
+                tools:srcCompat="@tools:sample/backgrounds/scenic[7]" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/apt1_description"
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/apt_description"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar2"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/apt1_description" />
             </android.support.constraint.ConstraintLayout>
 
         </TableRow>
 
         <TableRow
             android:id="@+id/apt3"
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
+            android:layout_width="330dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/apt2">
 
             <ImageView
@@ -149,64 +222,22 @@
 
                 <TextView
                     android:id="@+id/apt1_description"
-                    android:layout_width="236dp"
-                    android:layout_height="86dp"
-                    android:text="@string/apt_description"
-                    android:textSize="10sp" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="165dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/apt2"
-            android:layout_width="match_parent"
-            android:layout_height="86dp"
-            app:layout_constraintBottom_toTopOf="@+id/apt3"
-            app:layout_constraintTop_toBottomOf="@+id/apt1"
-            tools:layout_editor_absoluteX="8dp">
-
-            <ImageView
-                android:id="@+id/rank_apt2"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/apt2_pic"
-                android:layout_width="123dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@color/design_default_color_primary"
-                tools:srcCompat="@tools:sample/backgrounds/scenic[7]" />
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/apt1_description"
-                    android:layout_width="236dp"
-                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:text="@string/apt_description"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <RatingBar
                     android:id="@+id/ratingBar2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    tools:layout_editor_absoluteX="0dp" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/apt1_description" />
             </android.support.constraint.ConstraintLayout>
 
         </TableRow>
