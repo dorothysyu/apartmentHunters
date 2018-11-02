@@ -1,79 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddRoommatesActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".AddRoommatesActivity">
 
-        <AutoCompleteTextView
-            android:id="@+id/type_user"
-            android:layout_width="330dp"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="@string/add_by_user"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="132dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </android.support.design.widget.TextInputLayout>
+            <AutoCompleteTextView
+                android:id="@+id/type_user"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_by_user"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="true" />
 
-    <Button
-        android:id="@+id/add_roommate"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:text="@string/add_roommate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_via_phone" />
-    <!--tools:layout_editor_absoluteX="280dp"-->
-    <!--tools:layout_editor_absoluteY="0dp" />-->
+        </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/add_via_email"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/add_by_email"
-        app:layout_constraintEnd_toStartOf="@+id/add_via_phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-    <!--tools:layout_editor_absoluteX="16dp"-->
-    <!--tools:layout_editor_absoluteY="115dp" -->
+        <Button
+            android:id="@+id/add_feature"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/action_add_feature"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
 
-    <Button
-        android:id="@+id/add_via_phone"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="@string/add_by_phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/add_via_email"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        <Button
+            android:id="@+id/add_roommate"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/add_roommate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        <!--tools:layout_editor_absoluteX="280dp"-->
+        <!--tools:layout_editor_absoluteY="0dp" />-->
+
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="115dp" --><![CDATA[
+
     tools:layout_editor_absoluteX="211dp"/>
+
+
+
+    ]]>
 
     <EditText
         android:id="@+id/group_exists"
@@ -81,32 +79,37 @@
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/group_exists"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_via_email" />
-    <!--tools:layout_editor_absoluteX="16dp"-->
-    <!--tools:layout_editor_absoluteY="232dp" />-->
+        app:layout_constraintTop_toBottomOf="@+id/add_roommate" />
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="232dp" />-->
 
-    <Button
-        android:id="@+id/skip_add_roommates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="@string/skip_add_roommates"
-        app:layout_constraintBottom_toBottomOf="@+id/group_exists"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/group_exists"
-        app:layout_constraintTop_toTopOf="@+id/group_exists" />
+        <Button
+            android:id="@+id/skip_add_roommates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/skip_add_roommates"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/group_exists"
+            app:layout_constraintTop_toBottomOf="@+id/add_roommate"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <!--tools:layout_editor_absoluteX="203dp"-->
-    <!--tools:layout_editor_absoluteY="231dp" />-->
+        <!--tools:layout_editor_absoluteX="203dp"-->
+        <!--tools:layout_editor_absoluteY="231dp" />-->
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
