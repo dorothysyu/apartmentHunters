@@ -101,33 +101,17 @@
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/add_feature"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/add_feature">
+            tools:layout_editor_absoluteY="126dp">
             <!--tools:layout_editor_absoluteX="186dp"-->
             <!--tools:layout_editor_absoluteY="164dp">-->
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/action_add_price" />
+                android:hint="@string/action_add_price"
+                android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/add_feature"
-            android:layout_width="71dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="@string/action_add_feature"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/apt_description" />
 
         <Button
             android:id="@+id/landlord_info_prompt"
