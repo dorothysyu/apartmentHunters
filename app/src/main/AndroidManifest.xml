@@ -55,6 +55,7 @@
         <activity android:name=".ApartmentEditActivity" />
         <activity android:name=".IndividualChecklistActivity" />
         <activity android:name=".ExtraNotesActivity"></activity>
+        <activity android:name=".PickPhotoActivity" />
     </application>
 
 </manifest>

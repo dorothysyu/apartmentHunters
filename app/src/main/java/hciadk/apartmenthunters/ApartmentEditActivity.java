@@ -53,5 +53,15 @@ public class ApartmentEditActivity extends AppCompatActivity {
                         MainActivity.class));
             }
         });
+
+        Button addPhotos = findViewById(R.id.prompt_photos);
+
+        addPhotos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ApartmentEditActivity.this,
+                        PickPhotoActivity.class));
+            }
+        });
     }
 }
