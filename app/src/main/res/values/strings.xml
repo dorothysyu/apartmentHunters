@@ -54,6 +54,10 @@
     <string name="prompt_extra_notes">Add extra notes</string>
     <string name="prompt_add_photos">Add photos/videos</string>
 
+    <string name="matches_0">Matches criteria: </string>
+
+    <string name="additional_features">Additional features: </string>
+
     <string name="take_new_photo">Take new photo</string>
     <string name="open_existing_image">Open existing image</string>
     <string name="cannotopencamera">cannot open camera</string>

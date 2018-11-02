@@ -25,7 +25,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
             }
         });
 
-        Button features = findViewById(R.id.prompt_match);
+/*        Button features = findViewById(R.id.prompt_match);
 
         features.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +33,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
                 startActivity(new Intent(ApartmentEditActivity.this,
                         IndividualChecklistActivity.class));
             }
-        });
+        });*/
 
 
         homeBtn.setOnClickListener(new View.OnClickListener() {

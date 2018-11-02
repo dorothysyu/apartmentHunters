@@ -20,6 +20,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.content.FileProvider;
 //import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -72,7 +73,8 @@ public class PickPhotoActivity extends ApartmentEditActivity{
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
             // we have heard back from our request for camera and write external storage.
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED ) {
+//                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 invokeCamera();
             } else {
                 Toast.makeText(this, R.string.cannotopencamera, Toast.LENGTH_LONG).show();
@@ -121,6 +123,9 @@ public class PickPhotoActivity extends ApartmentEditActivity{
 
         // where do we want to find the data?
         File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//        File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+//        File pictureDirectory = Environment.getDownloadCacheDirectory();
+//         File pictureDirectory = Environment.getExternalStorageDirectory();
         String pictureDirectoryPath = pictureDirectory.getPath();
         // finally, get a URI representation
         Uri data = Uri.parse(pictureDirectoryPath);
@@ -130,6 +135,7 @@ public class PickPhotoActivity extends ApartmentEditActivity{
 
         // we will invoke this activity, and get something back from it.
         startActivityForResult(photoPickerIntent, IMAGE_GALLERY_REQUEST);
+        Log.d("directory", pictureDirectory.toString());
     }
 
     @Override
