@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -66,3 +69,4 @@
         <!--tools:layout_editor_absoluteX="0dp"-->
         <!--tools:layout_editor_absoluteY="8dp" />-->
 </android.support.constraint.ConstraintLayout>
+</ScrollView>

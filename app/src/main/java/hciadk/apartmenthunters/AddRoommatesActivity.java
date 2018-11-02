@@ -35,8 +35,6 @@ public class AddRoommatesActivity extends AppCompatActivity {
 
         Button skipBtn = findViewById(R.id.skip_add_roommates);
         Button continueBtn = findViewById(R.id.add_roommate);
-        Button addViaPhoneBtn = findViewById(R.id.add_via_phone);
-        Button addViaEmailBtn = findViewById(R.id.add_via_email);
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
