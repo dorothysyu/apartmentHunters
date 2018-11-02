@@ -1,5 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -47,5 +48,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/gridView"
         android:layout_weight="0.23"
-        android:numColumns="4" />
+        android:numColumns="4" >
+
+    </GridView>
 </LinearLayout>

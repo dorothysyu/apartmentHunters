@@ -28,6 +28,14 @@
     <string name="action_add_feature">Add</string>
     <string name="continue_from_criteria"> Continue </string>
 
+
+    <string name="two_singles"> 2 singles</string>
+    <string name="one_single"> 1 single</string>
+    <string name="living_room"> living room</string>
+    <string name="spacious_kitchen"> spacious kitchen</string>
+    <string name="in_unit_laundry"> in-unit laundry</string>
+    <string name="utilities_included"> utilities included</string>
+
     <!-- Strings related to selecting price range -->
     <string name="prompt_price_range"> What\'s your price range for your total monthly rent (you + roommates)?</string>
     <string name="prompt_hi">Max price</string>

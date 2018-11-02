@@ -1,5 +1,10 @@
 package hciadk.apartmenthunters;
-
+/*
+This is not our own code. We used code from:
+https://github.com/discospiff/PlantPlaces15s305
+https://www.youtube.com/watch?v=_xIWkCJZCu0
+to mimic some gallery functionality.
+ */
 import android.*;
 import android.Manifest;
 import android.annotation.TargetApi;
