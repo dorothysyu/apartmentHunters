@@ -46,6 +46,7 @@ public class FeaturesActivity extends AppCompatActivity {
                 cb.setText(content);
                 ll.addView(cb);
                 reorder();
+                t.setText("");
             }
                                   }
 
