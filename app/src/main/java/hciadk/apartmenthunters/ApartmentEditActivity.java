@@ -1,11 +1,14 @@
 package hciadk.apartmenthunters;
 
 import android.content.Intent;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 public class ApartmentEditActivity extends AppCompatActivity {
 
@@ -16,6 +19,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         Button extraNotesBtn = findViewById(R.id.extra_notes);
         ImageButton homeBtn = findViewById(R.id.home);
+        final Button addBtn = findViewById(R.id.add_feature);
+        final LinearLayout ll = findViewById(R.id.linearLayout2);
+        final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,5 +69,47 @@ public class ApartmentEditActivity extends AppCompatActivity {
                         PickPhotoActivity.class));
             }
         });
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View v) {
+                                          String content = t.getText().toString(); //gets you the contents of edit text
+                                          CheckBox cb = new CheckBox(getApplicationContext());
+                                          cb.setChecked(true);
+                                          cb.setText(content);
+                                          ll.addView(cb);
+                                          reorder();
+                                          t.setText("");
+                                      }
+                                  }
+
+        );
+
+
+
+    }
+
+    public void reorder() {
+
+        LinearLayout myLinearLayout = findViewById(R.id.linearLayout2);
+        // get number of children
+        int childCount = myLinearLayout.getChildCount();
+        // create array
+        View[] children = new View[childCount];
+
+        // get children of linearlayout
+        for (int i=0; i < childCount; i++){
+            children[i] = myLinearLayout.getChildAt(i);
+        }
+
+        //now remove all children
+        myLinearLayout.removeAllViews();
+
+        for (int i=0; i < childCount - 2; i++) {
+            myLinearLayout.addView(children[i]);
+        }
+
+        myLinearLayout.addView(children[childCount - 1]);
+        myLinearLayout.addView(children[childCount - 2]);
     }
 }
