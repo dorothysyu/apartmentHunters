@@ -167,7 +167,6 @@ public class PickPhotoActivity extends ApartmentEditActivity{
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    // show a message to the user indictating that the image is unavailable.
                     Toast.makeText(this, "Unable to open image", Toast.LENGTH_LONG).show();
                 }
 
