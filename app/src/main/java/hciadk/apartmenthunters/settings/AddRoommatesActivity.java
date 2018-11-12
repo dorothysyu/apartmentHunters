@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters;
+package hciadk.apartmenthunters.settings;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 
 import java.util.Arrays;
+
+import hciadk.apartmenthunters.R;
 
 public class AddRoommatesActivity extends AppCompatActivity {
 

@@ -1,11 +1,10 @@
-package hciadk.apartmenthunters;
+package hciadk.apartmenthunters.apartments;
 /*
 This is not our own code. We used code from:
 https://github.com/discospiff/PlantPlaces15s305
 https://www.youtube.com/watch?v=_xIWkCJZCu0
 to mimic some gallery functionality.
  */
-import android.*;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -16,13 +15,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v4.content.FileProvider;
 //import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -32,6 +28,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import hciadk.apartmenthunters.R;
 
 
 public class PickPhotoActivity extends ApartmentEditActivity{
@@ -49,10 +47,10 @@ public class PickPhotoActivity extends ApartmentEditActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pick_photo);
+        setContentView(hciadk.apartmenthunters.R.layout.activity_pick_photo);
 
         // get a reference to the image view that holds the image that the user will see.
-        imgPicture = (ImageView) findViewById(R.id.imgPicture);
+        imgPicture = (ImageView) findViewById(hciadk.apartmenthunters.R.id.imgPicture);
 
     }
 

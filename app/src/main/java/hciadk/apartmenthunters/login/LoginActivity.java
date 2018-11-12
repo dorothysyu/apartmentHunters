@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters;
+package hciadk.apartmenthunters.login;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -32,6 +32,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import hciadk.apartmenthunters.settings.AddRoommatesActivity;
+import hciadk.apartmenthunters.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

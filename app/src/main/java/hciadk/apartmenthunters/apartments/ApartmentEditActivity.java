@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters;
+package hciadk.apartmenthunters.apartments;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+
+import hciadk.apartmenthunters.R;
 
 public class ApartmentEditActivity extends AppCompatActivity {
 
