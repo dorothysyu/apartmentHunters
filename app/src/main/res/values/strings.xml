@@ -50,7 +50,6 @@
     <string name="apt_address"> 753 Columbus Avenue, Apt. #3 Roxbury Crossing, MA 02120</string>
     <string name="prompt_match">Compare to my checklist</string>
     <string name="action_add_price">Add price</string>
-    <string name="prompt_add_landlord">Add landlord info</string>
     <string name="prompt_extra_notes">Add/View extra notes</string>
     <string name="prompt_add_photos">Add photos/videos</string>
 

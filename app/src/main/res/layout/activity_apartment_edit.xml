@@ -63,9 +63,9 @@
         android:id="@+id/imageView"
         android:layout_width="162dp"
         android:layout_height="120dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/living_room"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav" />
@@ -75,32 +75,25 @@
 
     <TextView
         android:id="@+id/apt_description"
-        android:layout_width="189dp"
-        android:layout_height="74dp"
+        android:layout_width="169dp"
+        android:layout_height="89dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/apt_address"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
     <!--tools:layout_editor_absoluteX="190dp"-->
     <!--tools:layout_editor_absoluteY="89dp" />-->
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout3"
-        android:layout_width="151dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/landlord_info_prompt"
-        app:layout_constraintEnd_toEndOf="@+id/landlord_info_prompt"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/landlord_info_prompt"
-        app:layout_constraintTop_toBottomOf="@+id/apt_description"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_width="149dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/apt_description">
         <!--tools:layout_editor_absoluteX="186dp"-->
         <!--tools:layout_editor_absoluteY="164dp">-->
 
@@ -110,22 +103,6 @@
             android:hint="@string/action_add_price"
             android:inputType="number" />
     </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:id="@+id/landlord_info_prompt"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/prompt_add_landlord"
-        app:layout_constraintBottom_toBottomOf="@+id/prompt_photos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/prompt_photos"
-        app:layout_constraintTop_toTopOf="@+id/prompt_photos"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/prompt_photos"
@@ -163,8 +140,8 @@
         android:id="@+id/scrollView2"
         android:layout_width="169dp"
         android:layout_height="123dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prompt_photos">
@@ -196,15 +173,14 @@
     </ScrollView>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout5"
         android:layout_width="176dp"
         android:layout_height="204dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:hint="@string/prompt_add_feature"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="@+id/apt_description"
         app:layout_constraintTop_toTopOf="@+id/scrollView2">
 
         <ScrollView
