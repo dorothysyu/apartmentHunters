@@ -57,13 +57,13 @@
             android:id="@+id/add_roommate"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/add_roommate"
             android:fontFamily="@font/Lato_Regular"
+            android:text="@string/add_roommate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/add_feature" />
         <!--tools:layout_editor_absoluteX="280dp"-->
         <!--tools:layout_editor_absoluteY="0dp" />-->
 
@@ -74,44 +74,25 @@
 
 
 
-    ]]>
 
-    <EditText
-        android:id="@+id/group_exists"
-        android:layout_width="172dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/group_exists"
-        android:fontFamily="@font/Lato_Light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_roommate" />
-        <!--tools:layout_editor_absoluteX="16dp"-->
+
+        ]]><!--tools:layout_editor_absoluteX="16dp"-->
         <!--tools:layout_editor_absoluteY="232dp" />-->
 
         <Button
             android:id="@+id/skip_add_roommates"
-            android:layout_width="wrap_content"
+            android:layout_width="189dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/skip_add_roommates"
             android:fontFamily="@font/Lato_Regular"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/group_exists"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/group_exists"
-            app:layout_constraintTop_toBottomOf="@+id/add_roommate"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_roommate" />
 
         <!--tools:layout_editor_absoluteX="203dp"-->
         <!--tools:layout_editor_absoluteY="231dp" />-->

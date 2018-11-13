@@ -18,7 +18,7 @@
     <string name="add_roommate">Continue</string>
     <string name="add_by_email">Add by email</string>
     <string name="add_by_phone">Add by phone</string>
-    <string name="group_exists">Already in a group?</string>
+    <string name="group_exists">Already in a group? Skip this step</string>
     <string name="skip_add_roommates">Skip this step</string>
     <string name="title_activity_features_activity">Features</string>
 
@@ -51,7 +51,9 @@
     <string name="prompt_match">Compare to my checklist</string>
     <string name="action_add_price">Add price</string>
     <string name="prompt_extra_notes">Add/View extra notes</string>
+    <string name="add_extra_notes">Add extra notes</string>
     <string name="prompt_add_photos">Add photos/videos</string>
+
 
     <string name="matches_0">Matches mandatory criteria: </string>
 
