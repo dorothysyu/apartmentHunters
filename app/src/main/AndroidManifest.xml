@@ -60,7 +60,6 @@
             android:name=".apartments.ExtraNotesActivity"
             android:windowSoftInputMode="stateHidden">
         </activity>
-
         <activity
             android:name=".apartments.PickPhotoActivity" />
     </application>
