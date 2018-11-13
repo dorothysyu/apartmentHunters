@@ -17,7 +17,7 @@ public class FeaturesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.features_activity);
+        setContentView(R.layout.activity_features);
 
         Button doneBtn = findViewById(R.id.continue_from_criteria);
         Button backBtn = findViewById(R.id.back_to_ind_apt);
