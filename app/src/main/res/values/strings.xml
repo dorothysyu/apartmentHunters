@@ -24,7 +24,7 @@
 
     <!-- Strings related to checking off features -->
     <string name="checklist_prompt"> What features are you looking for in an apartment?</string>
-    <string name="prompt_add_feature">Add your own feature </string>
+    <string name="prompt_add_feature">Add new feature </string>
     <string name="action_add_feature">Add</string>
     <string name="continue_from_criteria"> Continue </string>
 
@@ -53,7 +53,7 @@
     <string name="prompt_extra_notes">Add/View extra notes</string>
     <string name="prompt_add_photos">Add photos/videos</string>
 
-    <string name="matches_0">Matches criteria: </string>
+    <string name="matches_0">Matches mandatory criteria: </string>
 
     <string name="additional_features">Additional features: </string>
 

@@ -39,6 +39,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
             android:hint="@string/prompt_hi"
+            android:fontFamily="@font/Lato_Regular"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/price_range_prompt" />
@@ -55,6 +56,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:text="@string/checklist_prompt"
+            android:fontFamily="@font/Roboto_Regular"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +73,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:text="@string/prompt_price_range"
+            android:fontFamily="@font/Roboto_Regular"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +91,7 @@
             android:layout_marginRight="140dp"
             android:layout_marginBottom="8dp"
             android:text="@string/continue_from_criteria"
+            android:fontFamily="@font/Roboto_Regular"
             app:layout_constraintBottom_toBottomOf="@+id/prompt_price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/prompt_price"
@@ -116,25 +120,29 @@
                 android:id="@+id/checkBox5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/two_singles" />
+                android:text="@string/two_singles"
+                android:fontFamily="@font/Lato_Regular"/>
 
             <CheckBox
                 android:id="@+id/checkBox7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/one_single" />
+                android:text="@string/one_single"
+                android:fontFamily="@font/Lato_Regular"/>
 
             <CheckBox
                 android:id="@+id/checkBox6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/in_unit_laundry" />
+                android:text="@string/in_unit_laundry"
+                android:fontFamily="@font/Lato_Regular"/>
 
             <CheckBox
                 android:id="@+id/checkBox10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/spacious_kitchen" />
+                android:text="@string/spacious_kitchen"
+                android:fontFamily="@font/Lato_Regular"/>
 
             <CheckBox
                 android:id="@+id/checkBox9"
@@ -151,13 +159,15 @@
                     android:id="@+id/prompt_add_own_feature"
                     android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_add_feature" />
+                    android:hint="@string/prompt_add_feature"
+                    android:fontFamily="@font/Lato_Regular"/>
 
                 <Button
                     android:id="@+id/add_feature"
                     android:layout_width="71dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/action_add_feature" />
+                    android:text="@string/action_add_feature"
+                    android:fontFamily="@font/Roboto_Regular"/>
 
             </android.support.design.widget.TextInputLayout>
 

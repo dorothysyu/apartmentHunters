@@ -51,6 +51,7 @@
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
+                    android:fontFamily="@font/Lato_Regular"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -69,6 +70,7 @@
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
+                    android:fontFamily="@font/Lato_Regular"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -84,7 +86,8 @@
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/action_sign_in"
+                android:text="@string/action_sign_in_short"
+                android:fontFamily="@font/Roboto_Regular"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
