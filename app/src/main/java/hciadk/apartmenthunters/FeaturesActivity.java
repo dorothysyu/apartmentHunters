@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
+import hciadk.apartmenthunters.settings.AddRoommatesActivity;
+
 public class FeaturesActivity extends AppCompatActivity {
 
     @Override
