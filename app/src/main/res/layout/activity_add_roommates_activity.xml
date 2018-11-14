@@ -12,13 +12,27 @@
         android:layout_height="match_parent"
         tools:context=".settings.AddRoommatesActivity">
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/Roboto_Regular"
+            android:text="TextView"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/add_roommates_header" />
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="132dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,11 +44,11 @@
                 android:id="@+id/type_user"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/Lato_Light"
                 android:hint="@string/add_by_user"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true"
-                android:fontFamily="@font/Lato_Light"/>
+                android:singleLine="true" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -58,8 +72,8 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:fontFamily="@font/Lato_Regular"
             android:text="@string/add_roommate"
             app:layout_constraintEnd_toEndOf="parent"
