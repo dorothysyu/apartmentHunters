@@ -24,7 +24,8 @@
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/apt_edit_header" />
+            tools:text="@string/apt_edit_header"
+            android:fontFamily="@font/Roboto_Regular"/>
 
         <ImageView
             android:id="@+id/imageView"
