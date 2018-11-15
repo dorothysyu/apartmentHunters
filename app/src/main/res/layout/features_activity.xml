@@ -28,8 +28,8 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/prompt_price"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="39dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="16dp"
@@ -83,15 +83,17 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="140dp"
-            android:layout_marginRight="140dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/Roboto_Regular"
             android:text="@string/continue_from_criteria"
             app:layout_constraintBottom_toBottomOf="@+id/prompt_price"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.178"
             app:layout_constraintStart_toEndOf="@+id/prompt_price"
-            app:layout_constraintTop_toBottomOf="@+id/price_range_prompt" />
+            app:layout_constraintTop_toBottomOf="@+id/price_range_prompt"
+            app:layout_constraintVertical_bias="0.529" />
         <!--tools:layout_editor_absoluteX="125dp"-->
         <!--tools:layout_editor_absoluteY="417dp" />-->
 
@@ -176,8 +178,8 @@
                     android:id="@+id/add_feature"
                     android:layout_width="71dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/action_add_feature"
-                    android:fontFamily="@font/Roboto_Regular"/>
+                    android:fontFamily="@font/Roboto_Regular"
+                    android:text="@string/action_add_feature" />
 
             </android.support.design.widget.TextInputLayout>
 
