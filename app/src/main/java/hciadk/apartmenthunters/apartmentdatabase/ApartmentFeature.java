@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters;
+package hciadk.apartmenthunters.apartmentdatabase;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
@@ -13,9 +13,9 @@ import android.support.annotation.NonNull;
                 childColumns = "aptID"),
             @ForeignKey(entity = Feature.class,
                 parentColumns = "featureID",
-                childColumns = "featureID")} )
+                childColumns = "featureID")})
 
-public class ApartmentFeatures {
+public class ApartmentFeature {
 
     @PrimaryKey
     @ColumnInfo(name = "featureID")
@@ -29,7 +29,7 @@ public class ApartmentFeatures {
     @ColumnInfo(name = "hasFeature")
     public boolean hasFeature;
 
-    public ApartmentFeatures() {}
+    public ApartmentFeature() {}
 
     public int getAptFeatID() { return aptFeatID; }
 
