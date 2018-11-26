@@ -24,7 +24,7 @@ import hciadk.apartmenthunters.FeaturesActivity;
 import hciadk.apartmenthunters.R;
 
 public class AddRoommatesActivity extends AppCompatActivity {
-    private RoommatesViewModel mViewModel;
+    private GroupViewModel mViewModel;
     ArrayList roommates;
 
     String lineSep = System.getProperty("line.separator");
@@ -44,40 +44,40 @@ public class AddRoommatesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-//        Button skipBtn = findViewById(R.id.skip_add_roommates);
-//        Button continueBtn = findViewById(R.id.add_roommate);
-//
-//        //Observer<ArrayList<String>> roommateObserver =
-//
-//        continueBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(AddRoommatesActivity.this,
-//                        FeaturesActivity.class));
-//            }
-//        });
-//
-//        skipBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(AddRoommatesActivity.this,
-//                        FeaturesActivity.class));
-//            }
-//        });
+        Button skipBtn = findViewById(R.id.skip_add_roommates);
+        Button continueBtn = findViewById(R.id.add_roommate);
+
+        //Observer<ArrayList<String>> roommateObserver =
+
+        continueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddRoommatesActivity.this,
+                        FeaturesActivity.class));
+            }
+        });
+
+        skipBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddRoommatesActivity.this,
+                        FeaturesActivity.class));
+            }
+        });
 
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main_roommates);
+        setContentView(R.layout.activity_add_roommates_activity);
         roommates = new ArrayList();
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final GroupListAdapter rAdapter = new GroupListAdapter(this);
         recyclerView.setAdapter(rAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mViewModel = ViewModelProviders.of(this).get(RoommatesViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(GroupViewModel.class);
         mViewModel.getAllGroups().observe(this, new Observer<List<Group>>() {
             @Override
             public void onChanged(@Nullable final List<Group> groups) {
@@ -89,7 +89,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, USERS);
-        final AutoCompleteTextView textView = findViewById(R.id.ctype_user);
+        final AutoCompleteTextView textView = findViewById(R.id.type_user);
         textView.setAdapter(adapter);
 
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -110,7 +110,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
             }
         });
 
-        Button add = findViewById(R.id.cadd_feature);
+        Button add = findViewById(R.id.add_feature);
 
         add.setOnClickListener(new View.OnClickListener() {
          @Override

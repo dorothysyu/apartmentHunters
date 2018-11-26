@@ -13,11 +13,11 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoommatesViewModel extends AndroidViewModel {
+public class GroupViewModel extends AndroidViewModel {
     private LiveData<List<Group>> mAllGroups;
     private GroupRepository mRepository;
 
-    public RoommatesViewModel (Application application) {
+    public GroupViewModel(Application application) {
         super(application);
         mRepository = new GroupRepository(application);
         mAllGroups = mRepository.getAllGroups();

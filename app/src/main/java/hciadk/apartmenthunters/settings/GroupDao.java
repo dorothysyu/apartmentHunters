@@ -16,7 +16,6 @@ public interface GroupDao {
     @Query("DELETE FROM group_table")
     void deleteAll();
 
-    @Query("SELECT * from group_table")
-            //"ORDER BY `group` ASC")
+    @Query("SELECT * from group_table ORDER BY group_users ASC")
     LiveData<List<Group>> getAllGroups();
 }

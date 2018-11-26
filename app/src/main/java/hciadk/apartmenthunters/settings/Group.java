@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(tableName = "group_table")
+@Entity(tableName = "group")
 
 public class Group {
 //    @PrimaryKey(autoGenerate = true)
@@ -15,7 +15,7 @@ public class Group {
 
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "group")
+    @ColumnInfo(name = "group_users")
     private String mGroup;
 
     public Group(@NonNull String group) {
@@ -25,7 +25,7 @@ public class Group {
 //        this.mId = mId;
     }
 
-    public String getGroup(){return this.mGroup;}
+    public String getGroup() { return this.mGroup; }
 
 //    public String getmUser() { return this.mUser;}
 //

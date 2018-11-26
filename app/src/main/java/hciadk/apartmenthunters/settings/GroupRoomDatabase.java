@@ -65,11 +65,11 @@ public abstract class GroupRoomDatabase extends RoomDatabase {
             // Not needed if you only populate on creation.
             mDao.deleteAll();
 
-            Group word = new Group("Hello");
-            mDao.insert(word);
-            word = new Group("World");
-            mDao.insert(word);
-            Log.d("does db exist", (INSTANCE != null) + "");
+//            Group word = new Group("Hello");
+//            mDao.insert(word);
+//            word = new Group("World");
+//            mDao.insert(word);
+//            Log.d("does db exist", (INSTANCE != null) + "");
             return null;
         }
     }
