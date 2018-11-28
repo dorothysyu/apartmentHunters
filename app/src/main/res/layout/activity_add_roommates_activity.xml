@@ -83,9 +83,9 @@
             android:fontFamily="@font/lato_regular"
             android:text="@string/add_roommate"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/skip_add_roommates"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="343dp" />
+            app:layout_constraintStart_toStartOf="parent" />
         <!--tools:layout_editor_absoluteX="280dp"-->
         <!--tools:layout_editor_absoluteY="0dp" />-->
 
@@ -102,18 +102,15 @@
             android:layout_marginLeft="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginBottom="8dp"
             android:background="@drawable/btn_nobox"
             android:fontFamily="@font/lato_regular"
             android:text="@string/group_exists"
             android:textColor="@color/btn_darker"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_roommate"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/add_roommate" />
 
         <TextView
             android:id="@+id/current_roommates"
