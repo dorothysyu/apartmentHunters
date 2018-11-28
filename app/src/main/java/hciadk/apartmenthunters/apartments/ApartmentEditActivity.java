@@ -33,6 +33,35 @@ public class ApartmentEditActivity extends AppCompatActivity {
             }
         });
 
+/*        Button features = findViewById(R.id.prompt_match);
+
+        features.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ApartmentEditActivity.this,
+                        IndividualChecklistActivity.class));
+            }
+        });*/
+
+
+/*        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ApartmentEditActivity.this,
+                        AllApartmentsActivity.class));
+            }
+        });*/
+
+/*        Button backToMain = findViewById(R.id.back_to_main);
+
+        backToMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ApartmentEditActivity.this,
+                        MainActivity.class));
+            }
+        });*/
+
         Button addPhotos = findViewById(R.id.prompt_photos);
 
         addPhotos.setOnClickListener(new View.OnClickListener() {

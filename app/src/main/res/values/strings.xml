@@ -25,7 +25,7 @@
     <string name="title_activity_features_activity">Features</string>
 
     <!-- Strings related to checking off features -->
-    <string name="prefs_header">Preferences</string>
+    <string name="prefs_header">Apartment Preferences</string>
     <string name="checklist_prompt"> What features are you looking for in an apartment?</string>
     <string name="prompt_add_feature">Add new feature </string>
     <string name="action_add_feature">Add</string>
