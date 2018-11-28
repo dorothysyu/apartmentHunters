@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:fontFamily="@font/lato_regular"
@@ -41,7 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="379dp" />
+            app:layout_constraintTop_toBottomOf="@+id/price_range_prompt" />
 
 
         <TextView
@@ -182,9 +183,11 @@
                 <Button
                     android:id="@+id/add_feature"
                     android:layout_width="71dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_selector"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="@string/action_add_feature" />
+                    android:text="@string/action_add_feature"
+                    android:textColor="@color/white" />
 
             </android.support.design.widget.TextInputLayout>
 
