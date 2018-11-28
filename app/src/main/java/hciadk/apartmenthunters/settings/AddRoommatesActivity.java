@@ -63,14 +63,23 @@ public class AddRoommatesActivity extends AppCompatActivity {
                                       @Override
                                       public void onClick(View v) {
                                           String content = t.getText().toString(); //gets you the contents of edit text
-                                          TextView textView = new TextView(getApplicationContext());
+                                          final TextView textView = new TextView(getApplicationContext());
                                           textView.setText(content);
                                           ll.addView(textView);
-                                          reorder();
+                                          final Button btn = new Button(getApplicationContext());
+                                          btn.setText("x");
+                                          btn.setOnClickListener(new View.OnClickListener() {
+                                              @Override
+                                              public void onClick(View v) {
+                                                  ll.removeView(textView);
+                                                  ll.removeView(btn);
+                                              }
+                                          });
+                                          ll.addView(btn);
+                                          //reorder();
                                           t.setText("");
                                       }
                                   }
-
         );
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
