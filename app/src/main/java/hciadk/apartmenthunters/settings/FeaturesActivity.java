@@ -21,7 +21,6 @@ public class FeaturesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_features);
 
         Button doneBtn = findViewById(R.id.continue_from_criteria);
-        Button backBtn = findViewById(R.id.back_to_ind_apt);
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
@@ -33,14 +32,6 @@ public class FeaturesActivity extends AppCompatActivity {
                         AllApartmentsActivity.class));
             }
         });
-
-/*        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(FeaturesActivity.this,
-                        AddRoommatesActivity.class));
-            }
-        });*/
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,15 +68,7 @@ public class FeaturesActivity extends AppCompatActivity {
         for (int i=0; i<childCount - 2; i++) {
             myLinearLayout.addView(children[i]);
         }
-//
-//        myLinearLayout.addView(children[childCount]);
         myLinearLayout.addView(children[childCount-1]);
         myLinearLayout.addView(children[childCount-2]);
-
-//        //and resort, first position
-//        myLinearLayout.addView(children[2]);
-//        //second position
-//        myLinearLayout.addView(children[0]);
-//        //etc.
     }
 }
