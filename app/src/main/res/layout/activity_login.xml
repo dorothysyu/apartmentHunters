@@ -25,7 +25,17 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="330dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/email_login_form"
@@ -81,11 +91,13 @@
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
-                android:layout_width="165dp"
-                android:layout_height="wrap_content"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/btn_selector"
+                android:fontFamily="@font/roboto_regular"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
