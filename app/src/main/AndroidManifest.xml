@@ -35,18 +35,33 @@
             android:name=".settings.AddRoommatesActivity"
             android:windowSoftInputMode="stateHidden">
         </activity>
+
         <activity
             android:name=".settings.FeaturesActivity"
-            android:windowSoftInputMode="stateHidden"> </activity>
-        <activity android:name=".apartments.MainActivity"
-            android:windowSoftInputMode="stateHidden"> </activity>
-        <activity android:name=".apartments.ApartmentEditActivity"
-            android:windowSoftInputMode="stateHidden"> </activity>
-        <activity android:name=".apartments.IndividualChecklistActivity"
-            android:windowSoftInputMode="stateHidden"> </activity>
-        <activity android:name=".apartments.ExtraNotesActivity"
-            android:windowSoftInputMode="stateHidden"> </activity>
-        <activity android:name=".apartments.PickPhotoActivity" />
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name=".apartments.MainActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name=".apartments.ApartmentEditActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name=".apartments.IndividualChecklistActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name=".apartments.ExtraNotesActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name=".apartments.PickPhotoActivity" />
     </application>
 
 </manifest>
