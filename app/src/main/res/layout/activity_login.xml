@@ -14,6 +14,20 @@
     tools:context=".login.LoginActivity">
 
     <!-- Login progress -->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/Roboto_Bold"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/login_form"
+        tools:text="@string/login_header" />
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -25,7 +39,11 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="330dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/email_login_form"
@@ -48,8 +66,9 @@
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
-                    android:layout_width="330dp"
+                    android:layout_width="291dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/Lato_Regular"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -66,8 +85,9 @@
 
                 <EditText
                     android:id="@+id/password"
-                    android:layout_width="330dp"
+                    android:layout_width="291dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/Lato_Regular"
                     android:hint="@string/prompt_password"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
@@ -84,7 +104,10 @@
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/action_sign_in"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:fontFamily="@font/Roboto_Regular"
+                android:text="@string/action_sign_in_short"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
