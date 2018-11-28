@@ -66,6 +66,7 @@
         </activity>
         <activity
             android:name=".apartments.PickPhotoActivity" />
+        <activity android:name=".apartments.AddApartmentActivity"/>
     </application>
 
 </manifest>
