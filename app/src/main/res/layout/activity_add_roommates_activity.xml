@@ -71,7 +71,6 @@
 
         <Button
             android:id="@+id/add_roommate"
-<<<<<<< HEAD
             android:layout_width="352dp"
             android:layout_height="45dp"
             android:layout_marginTop="224dp"
@@ -85,15 +84,7 @@
         <!--tools:layout_editor_absoluteY="0dp" />-->
 
         <!--tools:layout_editor_absoluteX="16dp"-->
-        <!--tools:layout_editor_absoluteY="115dp" --><![CDATA[
-
-    tools:layout_editor_absoluteX="211dp"/>
-
-
-
-
-
-        ]]><!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="115dp" --><!--tools:layout_editor_absoluteX="16dp"-->
         <!--tools:layout_editor_absoluteY="232dp" />-->
 
 
