@@ -167,6 +167,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/utilities_included" />
 
+
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -180,15 +182,6 @@
                     android:hint="@string/prompt_add_feature"
                     android:fontFamily="@font/lato_regular"/>
 
-                <Button
-                    android:id="@+id/add_feature"
-                    android:layout_width="71dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/btn_selector"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/action_add_feature"
-                    android:textColor="@color/white" />
-
             </android.support.design.widget.TextInputLayout>
 
             <!--tools:layout_editor_absoluteX="233dp"-->
@@ -196,6 +189,22 @@
 
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/add_feature"
+            android:layout_width="71dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="164dp"
+            android:background="@drawable/btn_selector"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/action_add_feature"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.911"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
