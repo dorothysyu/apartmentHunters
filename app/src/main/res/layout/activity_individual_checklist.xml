@@ -69,7 +69,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="@string/apt_address"
-        android:fontFamily="@font/Lato_Regular"
+        android:fontFamily="@font/lato_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
         android:text="@string/action_done_add"
-        android:fontFamily="@font/Roboto_Regular"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -106,14 +106,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/two_singles"
-            android:fontFamily="@font/Lato_Regular"/>
+            android:fontFamily="@font/lato_regular"/>
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/living_room"
-            android:fontFamily="@font/Lato_Regular"/>
+            android:fontFamily="@font/lato_regular"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,41 +6,41 @@
     <!-- ROBOTO: for any header text -->
     <!-- regular -->
     <font
-        android:font="@font/Roboto_Regular"
+        android:font="@font/roboto_regular"
         android:fontStyle="normal"
         android:fontWeight="400"
 
-        app:font="@font/Roboto_Regular"
+        app:font="@font/roboto_regular"
         app:fontStyle="normal"
         app:fontWeight="400" />
 
     <!-- italic -->
     <font
-        android:font="@font/Roboto_Italic"
+        android:font="@font/roboto_italic"
         android:fontStyle="italic"
         android:fontWeight="400"
 
-        app:font="@font/Roboto_Italic"
+        app:font="@font/roboto_italic"
         app:fontStyle="italic"
         app:fontWeight="400" />
 
     <!-- bold -->
     <font
-        android:font="@font/Roboto_Bold"
+        android:font="@font/roboto_bold"
         android:fontStyle="normal"
         android:fontWeight="700"
 
-        app:font="@font/Roboto_Bold"
+        app:font="@font/roboto_bold"
         app:fontStyle="normal"
         app:fontWeight="700" />
 
     <!-- bold italic-->
     <font
-        android:font="@font/Roboto_BoldItalic"
+        android:font="@font/roboto_bolditalic"
         android:fontStyle="italic"
         android:fontWeight="700"
 
-        app:font="@font/Roboto_BoldItalic"
+        app:font="@font/roboto_bolditalic"
         app:fontStyle="italic"
         app:fontWeight="700" />
 </font-family>
