@@ -29,13 +29,11 @@ public class ApartmentEditActivity extends AppCompatActivity {
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
+        final LinearLayout checklist = findViewById(R.id.criteria_list);
 
         String MY_PREFS_NAME = "featureList";
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-        String feature0 = prefs.getString("feature0", "No feature defined");
         int size = prefs.getInt("size", 0);
-
-        Log.d("passed intent", feature0);
 
         ArrayList<String> features = new ArrayList();
         String feature;
@@ -45,7 +43,12 @@ public class ApartmentEditActivity extends AppCompatActivity {
             features.add(feature);
         }
 
+        CheckBox newBox;
+
         for(String feat: features) {
+            newBox = new CheckBox(getApplicationContext());
+            newBox.setText(feat);
+            checklist.addView(newBox);
             Log.d("all features", feat);
         }
 

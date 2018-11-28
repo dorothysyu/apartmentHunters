@@ -140,17 +140,6 @@ public class FeaturesActivity extends AppCompatActivity {
             children[i] = myLinearLayout.getChildAt(i);
         }
 
-//        ArrayList features = new ArrayList();
-//
-//        for(View child:children) {
-//            if(child instanceof CheckBox) {
-//                CheckBox value = (CheckBox) child;
-//                if (value.isChecked()) {
-//                    String content = value.getText().toString();
-//                    features.add(content);
-//                }
-//            }
-//        }
         int i = 0;
         for(View child:children) {
             if(child instanceof CheckBox) {

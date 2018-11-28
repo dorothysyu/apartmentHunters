@@ -138,12 +138,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <CheckBox
-                        android:id="@+id/checkBox4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lato_regular"
-                        android:text="@string/two_singles" />
                 </LinearLayout>
 
                 <LinearLayout
