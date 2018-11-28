@@ -17,6 +17,7 @@
     <!-- Strings related to add roommates -->
     <string name="add_roommates_header">Add Roommates</string>
     <string name="add_by_user">Add by username</string>
+    <string name="current_roommates">Your Roommates:</string>
     <string name="add_roommate">Continue</string>
     <string name="add_by_email">Add by email</string>
     <string name="add_by_phone">Add by phone</string>

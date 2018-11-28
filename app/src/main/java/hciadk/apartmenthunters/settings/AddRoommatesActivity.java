@@ -1,6 +1,7 @@
 package hciadk.apartmenthunters.settings;
 
 import android.content.Intent;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.Arrays;
 
@@ -36,6 +39,9 @@ public class AddRoommatesActivity extends AppCompatActivity {
 
         Button skipBtn = findViewById(R.id.skip_add_roommates);
         Button continueBtn = findViewById(R.id.add_roommate);
+        Button addRoommate = findViewById(R.id.add_feature);
+        final LinearLayout ll = findViewById(R.id.linearLayout2);
+        final AutoCompleteTextView t = findViewById(R.id.type_user);
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +59,19 @@ public class AddRoommatesActivity extends AppCompatActivity {
             }
         });
 
+        addRoommate.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View v) {
+                                          String content = t.getText().toString(); //gets you the contents of edit text
+                                          TextView textView = new TextView(getApplicationContext());
+                                          textView.setText(content);
+                                          ll.addView(textView);
+                                          reorder();
+                                          t.setText("");
+                                      }
+                                  }
+
+        );
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, USERS);
@@ -70,5 +89,29 @@ public class AddRoommatesActivity extends AppCompatActivity {
                 textView.setText(Arrays.asList(USERNAMES).get(pos));
             }
         });
+    }
+
+
+    public void reorder() {
+
+        LinearLayout myLinearLayout = findViewById(R.id.linearLayout2);
+        // get number of children
+        int childCount = myLinearLayout.getChildCount();
+        // create array
+        View[] children = new View[childCount];
+
+        // get children of linearlayout
+        for (int i=0; i < childCount; i++){
+            children[i] = myLinearLayout.getChildAt(i);
+        }
+
+        //now remove all children
+        myLinearLayout.removeAllViews();
+
+        for (int i=0; i<childCount - 2; i++) {
+            myLinearLayout.addView(children[i]);
+        }
+        myLinearLayout.addView(children[childCount-1]);
+        myLinearLayout.addView(children[childCount-2]);
     }
 }
