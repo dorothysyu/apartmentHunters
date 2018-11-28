@@ -1,9 +1,11 @@
 package hciadk.apartmenthunters.apartments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,6 +26,12 @@ public class ApartmentEditActivity extends AppCompatActivity {
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
+
+        String MY_PREFS_NAME = "featureList";
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String feature0 = prefs.getString("feature0", "No feature defined");
+
+        Log.d("passed intent", feature0);
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override

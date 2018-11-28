@@ -1,7 +1,11 @@
 package hciadk.apartmenthunters.settings;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -76,11 +80,18 @@ public class AddRoommatesActivity extends AppCompatActivity {
                                               }
                                           });
                                           ll.addView(btn);
-                                          //reorder();
                                           t.setText("");
                                       }
                                   }
         );
+
+
+        String MY_PREFS_NAME = "blue";
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putString("name", "Elena");
+        editor.putInt("idName", 12);
+        editor.apply();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, USERS);
@@ -98,29 +109,5 @@ public class AddRoommatesActivity extends AppCompatActivity {
                 textView.setText(Arrays.asList(USERNAMES).get(pos));
             }
         });
-    }
-
-
-    public void reorder() {
-
-        LinearLayout myLinearLayout = findViewById(R.id.linearLayout2);
-        // get number of children
-        int childCount = myLinearLayout.getChildCount();
-        // create array
-        View[] children = new View[childCount];
-
-        // get children of linearlayout
-        for (int i=0; i < childCount; i++){
-            children[i] = myLinearLayout.getChildAt(i);
-        }
-
-        //now remove all children
-        myLinearLayout.removeAllViews();
-
-        for (int i=0; i<childCount - 2; i++) {
-            myLinearLayout.addView(children[i]);
-        }
-        myLinearLayout.addView(children[childCount-1]);
-        myLinearLayout.addView(children[childCount-2]);
     }
 }
