@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
+import hciadk.apartmenthunters.apartments.AllApartmentsActivity;
 import hciadk.apartmenthunters.apartments.MainActivity;
 import hciadk.apartmenthunters.R;
 
@@ -29,7 +30,7 @@ public class FeaturesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FeaturesActivity.this,
-                        MainActivity.class));
+                        AllApartmentsActivity.class));
             }
         });
 

@@ -48,7 +48,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ApartmentEditActivity.this,
-                        MainActivity.class));
+                        AllApartmentsActivity.class));
             }
         });
 

@@ -30,7 +30,6 @@
             </intent-filter>
         </activity>
 
-
         <activity
             android:name=".settings.AddRoommatesActivity"
             android:windowSoftInputMode="stateHidden">
@@ -43,6 +42,11 @@
 
         <activity
             android:name=".apartments.MainActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name=".apartments.AllApartmentsActivity"
             android:windowSoftInputMode="stateHidden">
         </activity>
 

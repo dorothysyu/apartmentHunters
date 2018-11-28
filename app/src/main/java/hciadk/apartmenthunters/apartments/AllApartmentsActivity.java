@@ -10,7 +10,7 @@ import android.widget.TableRow;
 import hciadk.apartmenthunters.R;
 import hciadk.apartmenthunters.settings.FeaturesActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class AllApartmentsActivity extends AppCompatActivity {
 
     @Override
     protected void onStart(){
@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-/*
+        setContentView(R.layout.activity_all_apts);
+
         TableRow aptRow1 = findViewById(R.id.apt1);
         TableRow aptRow2 = findViewById(R.id.apt2);
         TableRow aptRow3 = findViewById(R.id.apt3);
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         aptRow1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,
+                startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentEditActivity.class));
             }
         });
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         aptRow2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,
+                startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentEditActivity.class));
             }
         });
@@ -47,15 +47,15 @@ public class MainActivity extends AppCompatActivity {
         aptRow3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,
+                startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentEditActivity.class));
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
+/*        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,
+                startActivity(new Intent(AllApartmentsActivity.this,
                         FeaturesActivity.class));
             }
         });*/
