@@ -52,7 +52,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
             }
         });
 
-        Button backToMain = findViewById(R.id.back_to_main);
+/*        Button backToMain = findViewById(R.id.back_to_main);
 
         backToMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
                 startActivity(new Intent(ApartmentEditActivity.this,
                         MainActivity.class));
             }
-        });
+        });*/
 
         Button addPhotos = findViewById(R.id.prompt_photos);
 

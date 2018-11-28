@@ -33,13 +33,13 @@ public class FeaturesActivity extends AppCompatActivity {
             }
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
+/*        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FeaturesActivity.this,
                         AddRoommatesActivity.class));
             }
-        });
+        });*/
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
