@@ -14,19 +14,6 @@
     tools:context=".login.LoginActivity">
 
     <!-- Login progress -->
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/login_header"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/login_form"
-        tools:text="@string/login_header" />
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -38,12 +25,16 @@
 
     <ScrollView
         android:id="@+id/login_form"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/email_login_form"
@@ -103,11 +94,13 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="36dp"
                 android:layout_marginRight="36dp"
+                android:background="@drawable/btn_selector"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/action_sign_in_short"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
