@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters.settings;
+package hciadk.apartmenthunters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
-
-import hciadk.apartmenthunters.R;
 
 public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.GroupViewHolder> {
 

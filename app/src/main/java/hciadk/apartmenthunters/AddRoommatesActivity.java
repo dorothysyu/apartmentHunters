@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters.settings;
+package hciadk.apartmenthunters;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -19,9 +19,6 @@ import java.util.List;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-
-import hciadk.apartmenthunters.FeaturesActivity;
-import hciadk.apartmenthunters.R;
 
 public class AddRoommatesActivity extends AppCompatActivity {
     private GroupViewModel mViewModel;

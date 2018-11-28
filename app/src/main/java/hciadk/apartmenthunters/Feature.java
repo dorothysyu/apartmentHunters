@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters.apartmentdatabase;
+package hciadk.apartmenthunters;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

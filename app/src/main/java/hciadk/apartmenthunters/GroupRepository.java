@@ -1,8 +1,7 @@
-package hciadk.apartmenthunters.settings;
+package hciadk.apartmenthunters;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 
 import java.util.List;
@@ -12,7 +11,7 @@ public class GroupRepository {
     private LiveData<List<Group>> mAllGroups;
 
     GroupRepository(Application application) {
-        GroupRoomDatabase db = GroupRoomDatabase.getDatabase(application);
+        ApartmentDatabase db = ApartmentDatabase.getDatabase(application);
         mGroupDao = db.groupDao();
         mAllGroups = mGroupDao.getAllGroups();
     }

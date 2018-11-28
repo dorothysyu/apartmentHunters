@@ -1,16 +1,11 @@
-package hciadk.apartmenthunters.settings;
+package hciadk.apartmenthunters;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
-import android.arch.persistence.room.Room;
 import android.util.Log;
-import android.view.View;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GroupViewModel extends AndroidViewModel {

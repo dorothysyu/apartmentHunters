@@ -38,7 +38,7 @@
         </activity>
 
 
-        <activity android:name=".settings.AddRoommatesActivity">
+        <activity android:name=".AddRoommatesActivity">
 
         </activity>
         <activity android:name=".FeaturesActivity" />
@@ -62,6 +62,7 @@
         <activity android:name=".IndividualChecklistActivity" />
         <activity android:name=".ExtraNotesActivity"></activity>
         <activity android:name=".PickPhotoActivity" />
+        <activity android:name=".NewWordActivity" />
     </application>
 
 </manifest>

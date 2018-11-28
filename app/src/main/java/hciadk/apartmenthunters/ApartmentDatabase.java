@@ -1,4 +1,4 @@
-package hciadk.apartmenthunters.settings;
+package hciadk.apartmenthunters;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
@@ -7,20 +7,20 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-@Database(entities = {Group.class}, version = 1)
-public abstract class GroupRoomDatabase extends RoomDatabase {
+@Database(entities = {Group.class, Apartment.class}, version = 1)
+public abstract class ApartmentDatabase extends RoomDatabase {
     public abstract GroupDao groupDao();
-    private static volatile GroupRoomDatabase INSTANCE;
+    public abstract ApartmentDao aptDao();
+    private static volatile ApartmentDatabase INSTANCE;
 
-    static GroupRoomDatabase getDatabase(final Context context) {
+    static ApartmentDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
-            synchronized (GroupRoomDatabase.class) {
+            synchronized (ApartmentDatabase.class) {
                 if (INSTANCE == null) {
                     //Create database here
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            GroupRoomDatabase.class, "group_database")
+                            ApartmentDatabase.class, "apartment_database")
                             .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
@@ -53,17 +53,20 @@ public abstract class GroupRoomDatabase extends RoomDatabase {
      */
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private final GroupDao mDao;
+        private final GroupDao mGroupDao;
+        private final ApartmentDao mApartmentDao;
 
-        PopulateDbAsync(GroupRoomDatabase db) {
-            mDao = db.groupDao();
+        PopulateDbAsync(ApartmentDatabase db) {
+            mGroupDao = db.groupDao();
+            mApartmentDao = db.aptDao();
         }
 
         @Override
         protected Void doInBackground(final Void... params) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
-            mDao.deleteAll();
+            mGroupDao.deleteAll();
+            mApartmentDao.deleteAll();
 
 //            Group word = new Group("Hello");
 //            mDao.insert(word);

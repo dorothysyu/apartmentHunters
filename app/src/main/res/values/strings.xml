@@ -65,6 +65,10 @@
 
     <string name="action_done_add"> DONE</string>
     <string name="back">Back</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_word">Word…</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
 
 
 </resources>
