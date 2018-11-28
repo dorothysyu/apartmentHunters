@@ -30,15 +30,12 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="0dp"
+            android:layout_width="190dp"
             android:layout_height="120dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:src="@drawable/living_room"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
         <!--tools:layout_editor_absoluteX="16dp"-->
@@ -49,19 +46,43 @@
             android:id="@+id/apt_description"
             android:layout_width="169dp"
             android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:fontFamily="@font/lato_regular"
             android:text="@string/apt_address"
-            tools:layout_editor_absoluteX="218dp"
-            tools:layout_editor_absoluteY="409dp" />
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prompt_photos" />
         <!--tools:layout_editor_absoluteX="190dp"-->
         <!--tools:layout_editor_absoluteY="89dp" />-->
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/btn_selector"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/action_add_feature"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout3" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayout3"
             android:layout_width="181dp"
-            android:layout_height="56dp"
-            tools:layout_editor_absoluteX="26dp"
-            tools:layout_editor_absoluteY="374dp">
+            android:layout_height="47dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/apt_description">
 
             <android.support.design.widget.TextInputEditText
                 android:layout_width="101dp"
@@ -70,49 +91,39 @@
                 android:hint="@string/action_add_price"
                 android:inputType="number" />
 
-            <Button
-                android:id="@+id/add"
-                android:layout_width="72dp"
-                android:layout_height="36dp"
-                android:background="@drawable/btn_nobox"
-                android:fontFamily="@font/roboto_regular"
-                android:text="@string/action_add_feature"
-                android:textColor="@color/btn_darker"
-                android:textStyle="bold" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/prompt_photos"
             android:layout_width="165dp"
             android:layout_height="36dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/btn_nobox"
+            android:background="@drawable/btn_selector"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/prompt_add_photos"
-            android:textColor="@color/btn_darker"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="86dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prompt_photos">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -148,23 +159,6 @@
             </LinearLayout>
         </ScrollView>
 
-        <Button
-            android:id="@+id/add_feature"
-            android:layout_width="72dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/btn_nobox"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/action_add_feature"
-            android:textColor="@color/btn_darker"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.952"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="373dp" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayout5"
@@ -220,6 +214,24 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <Button
+            android:id="@+id/add_feature"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/btn_selector"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/action_add_feature"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout5" />
 
         <Button
             android:id="@+id/extra_notes"
@@ -229,7 +241,6 @@
             android:layout_marginLeft="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginBottom="16dp"
             android:background="@drawable/btn_selector"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/prompt_extra_notes"
