@@ -14,19 +14,6 @@
     tools:context=".login.LoginActivity">
 
     <!-- Login progress -->
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/login_header"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/login_form"
-        tools:text="@string/login_header" />
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -109,6 +96,8 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/action_sign_in_short"
                 android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_selector"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
