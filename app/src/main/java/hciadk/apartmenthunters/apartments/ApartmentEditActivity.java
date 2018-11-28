@@ -20,7 +20,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apartment_edit);
 
         Button extraNotesBtn = findViewById(R.id.extra_notes);
-        ImageButton homeBtn = findViewById(R.id.home);
+     //   ImageButton homeBtn = findViewById(R.id.home);
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
@@ -44,13 +44,13 @@ public class ApartmentEditActivity extends AppCompatActivity {
         });*/
 
 
-        homeBtn.setOnClickListener(new View.OnClickListener() {
+/*        homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ApartmentEditActivity.this,
                         AllApartmentsActivity.class));
             }
-        });
+        });*/
 
 /*        Button backToMain = findViewById(R.id.back_to_main);
 
