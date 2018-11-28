@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".settings.FeaturesActivity">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textSize="24sp"
+            android:fontFamily="@font/Roboto_Regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/prefs_header" />
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/prompt_price"
+            android:layout_width="200dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_features.xml
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+=======
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/Lato_Regular"
+>>>>>>> design_edits:app/src/main/res/layout/features_activity.xml
+            android:hint="@string/prompt_hi"
+            android:inputType="number"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/continue_from_criteria"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price_range_prompt" />
+
+
+        <TextView
+            android:id="@+id/checklist_prompt"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_features.xml
+            android:layout_marginBottom="8dp"
+=======
+            android:fontFamily="@font/Roboto_Regular"
+>>>>>>> design_edits:app/src/main/res/layout/features_activity.xml
+            android:text="@string/checklist_prompt"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <TextView
+            android:id="@+id/price_range_prompt"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/prompt_price_range"
+            android:fontFamily="@font/Roboto_Regular"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="27dp" />
+        <!--tools:layout_editor_absoluteX="6dp"-->
+        <!--tools:layout_editor_absoluteY="290dp"-->
+
+        <Button
+            android:id="@+id/continue_from_criteria"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/Roboto_Regular"
+            android:text="@string/continue_from_criteria"
+            app:layout_constraintBottom_toBottomOf="@+id/prompt_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.178"
+            app:layout_constraintStart_toEndOf="@+id/prompt_price"
+            app:layout_constraintTop_toBottomOf="@+id/price_range_prompt"
+            app:layout_constraintVertical_bias="0.529" />
+        <!--tools:layout_editor_absoluteX="125dp"-->
+        <!--tools:layout_editor_absoluteY="417dp" />-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ScrollView>
+
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checklist_prompt">
+            <!--tools:layout_editor_absoluteX="6dp"-->
+            <!--tools:layout_editor_absoluteY="49dp">-->
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/two_singles"
+                android:fontFamily="@font/Lato_Regular"/>
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/one_single"
+                android:fontFamily="@font/Lato_Regular"/>
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/in_unit_laundry"
+                android:fontFamily="@font/Lato_Regular"/>
+
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/spacious_kitchen"
+                android:fontFamily="@font/Lato_Regular"/>
+
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/utilities_included" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_add_feature">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/prompt_add_own_feature"
+                    style="@style/AppTheme"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_add_feature"
+                    android:fontFamily="@font/Lato_Regular"/>
+
+                <Button
+                    android:id="@+id/add_feature"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/Roboto_Regular"
+                    android:text="@string/action_add_feature" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--tools:layout_editor_absoluteX="233dp"-->
+            <!--tools:layout_editor_absoluteY="213dp" -->
+
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
