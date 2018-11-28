@@ -77,4 +77,5 @@ public abstract class ApartmentDatabase extends RoomDatabase {
         }
     }
 
+
 }

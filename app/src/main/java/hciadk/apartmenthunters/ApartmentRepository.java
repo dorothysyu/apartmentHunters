@@ -8,10 +8,11 @@ import java.util.List;
 
 public class ApartmentRepository {
     private ApartmentDao mAptDao;
+    private final ApartmentDatabase db;
     private LiveData<List<Apartment>> mAllApts;
 
     ApartmentRepository(Application application) {
-        ApartmentDatabase db = ApartmentDatabase.getDatabase(application);
+        db = ApartmentDatabase.getDatabase(application);
         mAptDao = db.aptDao();
         mAllApts = mAptDao.getAllApartments();
     }
@@ -22,6 +23,10 @@ public class ApartmentRepository {
 
     public void insert (Apartment apartment) {
         new ApartmentRepository.insertAsyncTask(mAptDao).execute(apartment);
+    }
+
+    public void setRating(final float rating, int id) {
+        db.aptDao().updateRating(rating, id);
     }
 
     private static class insertAsyncTask extends AsyncTask<Apartment, Void, Void> {

@@ -24,7 +24,7 @@ public class Apartment {
     @ColumnInfo(name = "maxPrice")
     private double price;
 
-    public Apartment(@NonNull int aptID, @NonNull String address, double rating, double price) {
+    public Apartment(@NonNull String address) {
         this.address = address;
         this.aptID = aptID;
         this.rating = rating;
@@ -46,4 +46,19 @@ public class Apartment {
         return price;
     }
 
+    public void setAptID(@NonNull int aptID) {
+        this.aptID = aptID;
+    }
+
+    public void setAddress(@NonNull String address) {
+        this.address = address;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 }
