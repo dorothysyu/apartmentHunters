@@ -51,13 +51,5 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
             }
         });
-
-/*        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AllApartmentsActivity.this,
-                        FeaturesActivity.class));
-            }
-        });*/
     }
 }

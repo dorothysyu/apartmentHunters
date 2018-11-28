@@ -39,11 +39,6 @@ public class PickPhotoActivity extends ApartmentEditActivity{
     public static final int CAMERA_PERMISSION_REQUEST_CODE = 4192;
     private ImageView imgPicture;
 
-/*     @Override
-   public int getCurrentMenuId() {
-        return R.id.capturecolor;
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
