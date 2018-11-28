@@ -163,7 +163,7 @@ public class FeaturesActivity extends AppCompatActivity {
             }
         }
 
-        editor.putInt("size", i+1);
+        editor.putInt("size", i);
 
         editor.apply();
 //        return features;

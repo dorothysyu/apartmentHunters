@@ -12,6 +12,9 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import hciadk.apartmenthunters.R;
 
 public class ApartmentEditActivity extends AppCompatActivity {
@@ -30,8 +33,21 @@ public class ApartmentEditActivity extends AppCompatActivity {
         String MY_PREFS_NAME = "featureList";
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String feature0 = prefs.getString("feature0", "No feature defined");
+        int size = prefs.getInt("size", 0);
 
         Log.d("passed intent", feature0);
+
+        ArrayList<String> features = new ArrayList();
+        String feature;
+
+        for(int i = 0; i < size; i++) {
+            feature = prefs.getString("feature" + i, "No feature defined");
+            features.add(feature);
+        }
+
+        for(String feat: features) {
+            Log.d("all features", feat);
+        }
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
