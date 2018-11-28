@@ -17,6 +17,7 @@ package hciadk.apartmenthunters.apartments;
  */
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -45,14 +46,12 @@ public class AddApartmentActivity extends AppCompatActivity {
         final Button button = findViewById(R.id.button_save);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent replyIntent = new Intent();
-                if (TextUtils.isEmpty(mEditWordView.getText())) {
-                    setResult(RESULT_CANCELED, replyIntent);
-                } else {
-                    String word = mEditWordView.getText().toString();
-                    replyIntent.putExtra(EXTRA_REPLY, word);
-                    setResult(RESULT_OK, replyIntent);
-                }
+
+                String MY_PREFS_NAME = "newAddress";
+
+                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString("address", mEditWordView.getText().toString());
+                editor.apply();
                 finish();
             }
         });

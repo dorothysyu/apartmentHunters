@@ -170,7 +170,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/apt1_description"
+                        android:id="@+id/apt2_description"
                         android:layout_width="165dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -232,7 +232,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/apt1_description"
+                        android:id="@+id/apt3_description"
                         android:layout_width="165dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
