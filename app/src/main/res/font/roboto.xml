@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- ROBOTO: for any header text -->
+    <!-- regular -->
+    <font
+        android:font="@font/Roboto_Regular"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/Roboto_Regular"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/Roboto_Italic"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/Roboto_Italic"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/Roboto_Bold"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/Roboto_Bold"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- bold italic-->
+    <font
+        android:font="@font/Roboto_BoldItalic"
+        android:fontStyle="italic"
+        android:fontWeight="700"
+
+        app:font="@font/Roboto_BoldItalic"
+        app:fontStyle="italic"
+        app:fontWeight="700" />
+</font-family>

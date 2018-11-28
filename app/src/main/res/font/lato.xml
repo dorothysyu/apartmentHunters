@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- LATO LIGHT: for any body text -->
+    <!-- light ("regular") -->
+    <font
+        android:font="@font/Lato_Light"
+        android:fontStyle="normal"
+        android:fontWeight="100"
+
+        app:font="@font/Lato_Light"
+        app:fontStyle="normal"
+        app:fontWeight="100" />
+
+    <!-- light italic -->
+    <font
+        android:font="@font/Lato_LightItalic"
+        android:fontStyle="italic"
+        android:fontWeight="100"
+
+        app:font="@font/Lato_LightItalic"
+        app:fontStyle="italic"
+        app:fontWeight="100" />
+
+    <!-- regular ("bold") -->
+    <font
+        android:font="@font/Lato_Regular"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/Lato_Regular"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic-->
+    <font
+        android:font="@font/Lato_Italic"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/Lato_Italic"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+</font-family>
