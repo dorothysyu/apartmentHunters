@@ -66,7 +66,7 @@
     <string name="additional_features">Additional features: </string>
 
     <string name="take_new_photo">Take new photo</string>
-    <string name="select">Select</string>
+    <string name="select">Add Selected Photos</string>
     <string name="open_existing_image">Open existing image</string>
     <string name="cannotopencamera">cannot open camera</string>
 

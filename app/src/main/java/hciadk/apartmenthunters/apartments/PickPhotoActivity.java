@@ -8,6 +8,7 @@ to mimic some gallery functionality.
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,8 +18,11 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -30,6 +34,7 @@ import java.util.Date;
 
 import hciadk.apartmenthunters.R;
 
+/*
 
 public class PickPhotoActivity extends ApartmentEditActivity{
 
@@ -103,10 +108,12 @@ public class PickPhotoActivity extends ApartmentEditActivity{
         return imageFile;
     }
 
-    /**
+    */
+/**
      * This method will be invoked when the user clicks a button
      * @param v
-     */
+     *//*
+
     public void onImageGalleryClicked(View v) {
         // invoke the image gallery using an implict intent.
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
@@ -161,5 +168,32 @@ public class PickPhotoActivity extends ApartmentEditActivity{
 
             }
         }
+    }
+}
+*/
+
+public class PickPhotoActivity extends AppCompatActivity {
+
+    public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
+
+    private EditText mEditWordView;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pick_photo);
+
+        final Button select = findViewById(R.id.select);
+        select.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                String MY_PREFS_NAME = "newAddress";
+
+                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString("address", mEditWordView.getText().toString());
+                editor.apply();
+                finish();
+            }
+        });
     }
 }
