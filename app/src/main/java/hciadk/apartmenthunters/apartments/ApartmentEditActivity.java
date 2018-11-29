@@ -197,12 +197,14 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         //save price
         TextInputEditText priceField = findViewById(R.id.price_text_edit);
-        String priceTyped = priceField.getText().toString();
-        int price = Integer.valueOf(priceTyped);
+        if(!(priceField.getText().toString().equals(""))) {
+            String priceTyped = priceField.getText().toString();
+            int price = Integer.valueOf(priceTyped);
 
-        Log.d("price", price + "");
+            Log.d("price", price + "");
 
-        editor.putInt("price", price);
+            editor.putInt("price", price);
+        }
 
         editor.apply();
     }
