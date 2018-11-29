@@ -32,6 +32,7 @@ public class ExtraNotesActivity extends AppCompatActivity {
 
                 startActivity(new Intent(ExtraNotesActivity.this,
                         ApartmentEditActivity.class));
+                finish();
             }
         });
     }

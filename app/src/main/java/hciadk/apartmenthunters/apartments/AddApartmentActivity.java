@@ -44,14 +44,29 @@ public class AddApartmentActivity extends AppCompatActivity {
         mEditWordView = findViewById(R.id.edit_word);
 
         final Button button = findViewById(R.id.button_save);
+
+        String MY_PREFS_NAME = "apts";
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
+        int i = 0;
+        while(prefs.getBoolean("apt"+i, true)) {
+            i++;
+        }
+        final int k = i;
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
                 String MY_PREFS_NAME = "newAddress";
 
                 SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-                editor.putString("address", mEditWordView.getText().toString());
+                //pass the address
+                editor.putString("address" + k, mEditWordView.getText().toString());
+                //pass the apt to make visible
+                editor.putInt("flipVisibility", k);
                 editor.apply();
+                startActivity(new Intent(AddApartmentActivity.this,
+                        AllApartmentsActivity.class));
                 finish();
             }
         });
