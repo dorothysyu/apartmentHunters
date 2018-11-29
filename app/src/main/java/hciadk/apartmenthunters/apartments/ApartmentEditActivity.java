@@ -50,6 +50,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
         LoadPreferences();
 
 
+//        MY_PREFS_NAME = "extraNotes";
+//        prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,13 +194,17 @@ public class ApartmentEditActivity extends AppCompatActivity {
             editor.putBoolean("checked" + i, boo);
             i+=1;
         }
-//        for(boolean boo:extraCheckedFeatures) {
-//            editor.putBoolean("extraFeature")
-//        }
 
+        //save price
+        TextInputEditText priceField = findViewById(R.id.price_text_edit);
+        String priceTyped = priceField.getText().toString();
+        int price = Integer.valueOf(priceTyped);
+
+        Log.d("price", price + "");
+
+        editor.putInt("price", price);
 
         editor.apply();
-        Log.d("savepreferences", "hello");
     }
 
     private void LoadPreferences(){
@@ -245,6 +252,12 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         recheckCheckboxes(extraFeatureBoxes, extraCriteria);
 
+        //set price
+        int price = sharedPreferences.getInt("price", 0);
+        TextInputEditText priceField = findViewById(R.id.price_text_edit);
+        if (price != 0) {
+            priceField.setText(String.valueOf(price));
+        }
 
 
     }

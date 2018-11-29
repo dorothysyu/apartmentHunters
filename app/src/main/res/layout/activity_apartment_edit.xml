@@ -85,6 +85,7 @@
             app:layout_constraintTop_toTopOf="@+id/apt_description">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/price_text_edit"
                 android:layout_width="101dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
