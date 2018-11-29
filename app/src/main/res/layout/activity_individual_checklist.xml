@@ -77,13 +77,15 @@
 
     <Button
         android:id="@+id/done_adding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="71dp"
+        android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
-        android:text="@string/action_done_add"
         android:fontFamily="@font/roboto_regular"
+        android:text="@string/action_done_add"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
