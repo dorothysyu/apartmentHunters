@@ -58,7 +58,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(ApartmentEditActivity.this,
                         ExtraNotesActivity.class));
-                finish();
             }
         });
 
@@ -69,7 +68,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(ApartmentEditActivity.this,
                         PickPhotoActivity.class));
-                finish();
             }
         });
 
@@ -128,9 +126,8 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
     }
 
-    public boolean[] getCheckedFeatures() {
+    public boolean[] getCheckedFeatures(LinearLayout myLinearLayout) {
 
-        LinearLayout myLinearLayout = findViewById(R.id.criteria_list);
         // get number of children
         int childCount = myLinearLayout.getChildCount();
         View[] children = getContentsOfChecklist(myLinearLayout, childCount);
@@ -162,9 +159,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
     private void SavePreferences(){
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        //editor.putBoolean("state", button.isEnabled());
+        LinearLayout myLinearLayout = findViewById(R.id.criteria_list);
 
-        boolean[] checkedCriteria = getCheckedFeatures();
+        boolean[] checkedCriteria = getCheckedFeatures(myLinearLayout);
 
         int i = 0;
         for (boolean boo:checkedCriteria) {
@@ -175,31 +172,21 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         editor.commit();
         Log.d("savepreferences", "hello");
-        // I missed to save the data to preference here,.
     }
 
     private void LoadPreferences(){
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
-//        Boolean  state = sharedPreferences.getBoolean("state", false);
-//        button.setEnabled(state);
-//        Log
 
         LinearLayout ll = findViewById(R.id.criteria_list);
         int childCount = ll.getChildCount();
         boolean[] criteria = new boolean[childCount];
-//
-//        Log.d("crit size", criteria.length + "");
-//        Boolean boo = sharedPreferences.getBoolean("checked0", false);
-//        Log.d("sharedpref working", boo + "");
 
         for(int i = 0; i < childCount; i++) {
             Boolean boo = sharedPreferences.getBoolean("checked" + i, false);
             Log.d("call sharedpref", boo + "");
             criteria[i] = boo;
         }
-//
-////        Log.d("checked Criteria", Boolean.toString(criteria[1]) + criteria[2] + "");
-//
+
         View[] checkboxes = getContentsOfChecklist(ll, childCount);
         int j = 0;
         for (View child:checkboxes) {
@@ -226,7 +213,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
 //        savedInstanceState.putInt("MyInt", 1);
 //        savedInstanceState.putString("MyString", "Welcome back to Android");
 
-        savedInstanceState.putBooleanArray("checkedCriteria", getCheckedFeatures());
+        LinearLayout myLinearLayout = findViewById(R.id.criteria_list);
+
+        savedInstanceState.putBooleanArray("checkedCriteria", getCheckedFeatures(myLinearLayout));
         Log.d("savedinstancestate", "hello");
 
 //        savedInstanceState.putSerializable("Criteria", getCheckedFeatures());
