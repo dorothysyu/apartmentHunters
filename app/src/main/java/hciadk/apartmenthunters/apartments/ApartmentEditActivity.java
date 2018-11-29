@@ -25,7 +25,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apartment_edit);
 
         Button extraNotesBtn = findViewById(R.id.extra_notes);
-     //   ImageButton homeBtn = findViewById(R.id.home);
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
@@ -59,35 +58,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
                         ExtraNotesActivity.class));
             }
         });
-
-/*        Button features = findViewById(R.id.prompt_match);
-
-        features.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentEditActivity.this,
-                        IndividualChecklistActivity.class));
-            }
-        });*/
-
-
-/*        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentEditActivity.this,
-                        AllApartmentsActivity.class));
-            }
-        });*/
-
-/*        Button backToMain = findViewById(R.id.back_to_main);
-
-        backToMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentEditActivity.this,
-                        MainActivity.class));
-            }
-        });*/
 
         Button addPhotos = findViewById(R.id.prompt_photos);
 
@@ -140,5 +110,18 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         myLinearLayout.addView(children[childCount - 1]);
         myLinearLayout.addView(children[childCount - 2]);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        savedInstanceState.putBoolean("MyBoolean", true);
+        savedInstanceState.putDouble("myDouble", 1.9);
+        savedInstanceState.putInt("MyInt", 1);
+        savedInstanceState.putString("MyString", "Welcome back to Android");
+        // etc.
     }
 }
