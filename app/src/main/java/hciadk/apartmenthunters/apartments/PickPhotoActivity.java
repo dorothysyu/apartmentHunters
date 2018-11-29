@@ -16,7 +16,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
-//import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,21 +38,14 @@ public class PickPhotoActivity extends ApartmentEditActivity{
     public static final int CAMERA_PERMISSION_REQUEST_CODE = 4192;
     private ImageView imgPicture;
 
-/*     @Override
-   public int getCurrentMenuId() {
-        return R.id.capturecolor;
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(hciadk.apartmenthunters.R.layout.activity_pick_photo);
 
         // get a reference to the image view that holds the image that the user will see.
-      //  imgPicture = (ImageView) findViewById(hciadk.apartmenthunters.R.id.imgPicture);
 
     }
-
 
     @TargetApi(23)
     public void onTakePhotoClicked(View v) {
@@ -121,9 +113,7 @@ public class PickPhotoActivity extends ApartmentEditActivity{
 
         // where do we want to find the data?
         File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-//        File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-//        File pictureDirectory = Environment.getDownloadCacheDirectory();
-//         File pictureDirectory = Environment.getExternalStorageDirectory();
+
         String pictureDirectoryPath = pictureDirectory.getPath();
         // finally, get a URI representation
         Uri data = Uri.parse(pictureDirectoryPath);
