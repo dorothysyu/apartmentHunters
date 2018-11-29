@@ -11,47 +11,27 @@
     android:weightSum="1">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnTakePhoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onTakePhotoClicked"
-            android:text="@string/take_new_photo" />
-
-        <Button
-            android:id="@+id/btnImageGallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:nestedScrollingEnabled="true"
-            android:onClick="onImageGalleryClicked"
-            android:text="@string/open_existing_image" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="342dp"
-        android:layout_height="269dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="357dp"
+        android:layout_height="373dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView12"
                 android:layout_width="115dp"
                 android:layout_height="115dp"
-                app:srcCompat="@drawable/bathroom" />
+                app:srcCompat="@drawable/camera" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -67,9 +47,22 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/cute_living" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -81,20 +74,21 @@
                 android:id="@+id/imageView7"
                 android:layout_width="115dp"
                 android:layout_height="115dp"
-                app:srcCompat="@drawable/cozy" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                app:srcCompat="@drawable/cute_living" />
+                app:srcCompat="@drawable/kitchen_toilet" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/linearLayout4"
+            android:layout_width="336dp"
             android:layout_height="119dp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -104,9 +98,9 @@
 
             <ImageView
                 android:id="@+id/imageView10"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                android:src="@drawable/open" />
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/eighties" />
 
             <ImageView
                 android:id="@+id/imageView11"
@@ -115,6 +109,23 @@
                 app:srcCompat="@drawable/open" />
 
         </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:nestedScrollingEnabled="true"
+            android:onClick="onImageGalleryClicked"
+            android:text="@string/select" />
 
     </LinearLayout>
 
