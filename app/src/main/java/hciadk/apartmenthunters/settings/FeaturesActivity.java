@@ -37,35 +37,6 @@ public class FeaturesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_features);
-//
-//        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver,
-//                new IntentFilter("INTENT_NAME"));
-
-//        Intent intent = getIntent();
-//        String easyPuzzle = intent.getExtras().getString("epuzzle");
-//        Log.d("hello", easyPuzzle);
-
-//        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("INTENT_NAME"));
-
-//        SharedPreferences bb = getSharedPreferences("my_prefs", 0);
-//        String m = bb.getString("NUM", "");
-//        Toast.makeText(this, m, Toast.LENGTH_SHORT).show();
-//        Log.d("hello", m)
-//
-//        String MY_PREFS_NAME = "blue";
-//        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-//        String restoredText = prefs.getString("text", null);
-//        String name = prefs.getString("name", "No name defined");
-//        if (restoredText != null) {
-//            //String name = prefs.getString("name", "No name defined");//"No name defined" is the default value.
-//            int idName = prefs.getInt("idName", 0); //0 is the default value.
-//            Log.d("intent works", name);
-//            Log.d("intent still works", idName + "");
-//        }
-//
-//
-//        Log.d("don't crash", "hi");
-//        Log.d("you'll crash tho", name);
 
 
         Button doneBtn = findViewById(R.id.continue_from_criteria);
