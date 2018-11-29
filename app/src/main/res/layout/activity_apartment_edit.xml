@@ -167,6 +167,12 @@
             app:layout_constraintStart_toStartOf="@+id/additional_features"
             app:layout_constraintTop_toBottomOf="@+id/additional_features">
 
+            <LinearLayout
+                android:id="@+id/added_feature_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/textInputLayout6"
                 android:layout_width="wrap_content"

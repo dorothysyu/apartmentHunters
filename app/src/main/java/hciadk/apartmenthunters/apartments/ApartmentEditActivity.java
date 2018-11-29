@@ -2,6 +2,7 @@ package hciadk.apartmenthunters.apartments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,32 +31,29 @@ public class ApartmentEditActivity extends AppCompatActivity {
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
         final LinearLayout checklist = findViewById(R.id.criteria_list);
+        final LinearLayout extraChecklist = findViewById(R.id.added_feature_list);
 
         String MY_PREFS_NAME = "featureList";
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         int size = prefs.getInt("size", 0);
 
-        ArrayList<String> features = new ArrayList();
+        String[] features = new String[size];
         String feature;
 
         for(int i = 0; i < size; i++) {
             feature = prefs.getString("feature" + i, "No feature defined");
-            features.add(feature);
+            features[i] = feature;
+//            features.add(feature);
         }
 
-        CheckBox newBox;
-
-        for(String feat: features) {
-            newBox = new CheckBox(getApplicationContext());
-            newBox.setText(feat);
-            checklist.addView(newBox);
-            Log.d("all features", feat);
-        }
+        restoreChecklist(checklist, features);
         LoadPreferences();
+
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SavePreferences();
                 startActivity(new Intent(ApartmentEditActivity.this,
                         ExtraNotesActivity.class));
             }
@@ -66,6 +64,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
         addPhotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SavePreferences();
                 startActivity(new Intent(ApartmentEditActivity.this,
                         PickPhotoActivity.class));
             }
@@ -78,8 +77,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
                                           CheckBox cb = new CheckBox(getApplicationContext());
                                           cb.setChecked(true);
                                           cb.setText(content);
-                                          ll.addView(cb);
-                                          reorder();
+                                          extraChecklist.addView(cb);
                                           t.setText("");
                                       }
                                   }
@@ -87,6 +85,17 @@ public class ApartmentEditActivity extends AppCompatActivity {
         );
 
 
+
+    }
+
+    public void restoreChecklist(LinearLayout myLinearLayout, String[] features) {
+        CheckBox newBox;
+        for(String feat: features) {
+            newBox = new CheckBox(getApplicationContext());
+            newBox.setText(feat);
+            myLinearLayout.addView(newBox);
+            Log.d("all features", feat);
+        }
 
     }
 
@@ -101,24 +110,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
         return children;
     }
 
-
-    public void reorder() {
-
-        LinearLayout myLinearLayout = findViewById(R.id.linearLayout2);
-        int childCount = myLinearLayout.getChildCount();
-
-        View[] children = getContentsOfChecklist(myLinearLayout, childCount);
-
-        //now remove all children
-        myLinearLayout.removeAllViews();
-
-        for (int i=0; i < childCount - 2; i++) {
-            myLinearLayout.addView(children[i]);
-        }
-
-        myLinearLayout.addView(children[childCount - 1]);
-        myLinearLayout.addView(children[childCount - 2]);
-    }
 
     public void getAdditionalFeatures() {
 
@@ -156,21 +147,45 @@ public class ApartmentEditActivity extends AppCompatActivity {
         //LinearLayout ll =
     }
 
+
     private void SavePreferences(){
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         LinearLayout myLinearLayout = findViewById(R.id.criteria_list);
+        LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
+
+        int extraFeatSize = extraFeatureLayout.getChildCount();
 
         boolean[] checkedCriteria = getCheckedFeatures(myLinearLayout);
+        View[] extraFeatures = getContentsOfChecklist(extraFeatureLayout, extraFeatSize);
+        boolean[] extraCheckedFeatures = getCheckedFeatures(extraFeatureLayout);
+
+        String[] extraFeatList = new String[extraFeatSize];
+        int k = 0;
+
+        for(View feature:extraFeatures) {
+            if(feature instanceof CheckBox){
+                CheckBox box = (CheckBox) feature;
+                String content = box.getText().toString();
+                editor.putString("extraFeat" + k, content);
+                extraFeatList[k] = content;
+                k++;
+            }
+        }
+
+        editor.putInt("extraFeatSize", extraFeatSize);
 
         int i = 0;
         for (boolean boo:checkedCriteria) {
             editor.putBoolean("checked" + i, boo);
-            Log.d("savepref", boo + "");
             i+=1;
         }
+//        for(boolean boo:extraCheckedFeatures) {
+//            editor.putBoolean("extraFeature")
+//        }
+//
 
-        editor.commit();
+        editor.apply();
         Log.d("savepreferences", "hello");
     }
 
@@ -178,6 +193,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
 
         LinearLayout ll = findViewById(R.id.criteria_list);
+        LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
         int childCount = ll.getChildCount();
         boolean[] criteria = new boolean[childCount];
 
@@ -195,45 +211,24 @@ public class ApartmentEditActivity extends AppCompatActivity {
             j++;
         }
 
+        int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
+
+        String[] extraFeatures = new String[extraFeatListSize];
+        String feature;
+
+        for(int i = 0; i < extraFeatListSize; i++) {
+            feature = sharedPreferences.getString("extraFeat" + i, "No feature defined");
+            extraFeatures[i] = feature;
+//            features.add(feature);
+        }
+
+        restoreChecklist(extraFeatureLayout, extraFeatures);
+
     }
 
     @Override
     public void onBackPressed() {
         SavePreferences();
         super.onBackPressed();
-    }
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        // Save UI state changes to the savedInstanceState.
-        // This bundle will be passed to onCreate if the process is
-//        // killed and restarted.
-//        savedInstanceState.putBoolean("MyBoolean", true);
-//        savedInstanceState.putDouble("myDouble", 1.9);
-//        savedInstanceState.putInt("MyInt", 1);
-//        savedInstanceState.putString("MyString", "Welcome back to Android");
-
-        LinearLayout myLinearLayout = findViewById(R.id.criteria_list);
-
-        savedInstanceState.putBooleanArray("checkedCriteria", getCheckedFeatures(myLinearLayout));
-        Log.d("savedinstancestate", "hello");
-
-//        savedInstanceState.putSerializable("Criteria", getCheckedFeatures());
-        // etc.
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        // Restore UI state from the savedInstanceState.
-//        // This bundle has also been passed to onCreate.
-//        boolean myBoolean = savedInstanceState.getBoolean("MyBoolean");
-//        double myDouble = savedInstanceState.getDouble("myDouble");
-//        int myInt = savedInstanceState.getInt("MyInt");
-//        String myString = savedInstanceState.getString("MyString");
-
-        boolean[] checkedCriteria = savedInstanceState.getBooleanArray("checkedCriteria");
-        Log.d("checked Criteria", Boolean.toString(checkedCriteria[1]) + checkedCriteria[2] + "");
-//        Serializable criteria = savedInstanceState.getSerializable("Criteria");
     }
 }
