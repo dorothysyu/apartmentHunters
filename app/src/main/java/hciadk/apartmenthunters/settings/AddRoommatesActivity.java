@@ -3,6 +3,7 @@ package hciadk.apartmenthunters.settings;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
@@ -71,7 +72,9 @@ public class AddRoommatesActivity extends AppCompatActivity {
                                           textView.setText(content);
                                           ll.addView(textView);
                                           final Button btn = new Button(getApplicationContext());
-                                          btn.setText("x");
+                                          btn.setText("remove");
+                                          btn.setTextColor(Color.parseColor("#33458C"));
+                                          btn.setBackgroundColor(Color.WHITE);
                                           btn.setOnClickListener(new View.OnClickListener() {
                                               @Override
                                               public void onClick(View v) {

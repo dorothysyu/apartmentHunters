@@ -1,29 +1,21 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:weightSum="1">
 
 
-    <ImageView
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgPicture"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.23" />
-
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnTakePhoto"
@@ -34,21 +26,96 @@
             android:text="@string/take_new_photo" />
 
         <Button
+            android:id="@+id/btnImageGallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/open_existing_image"
-            android:id="@+id/btnImageGallery"
             android:layout_weight="1"
+            android:nestedScrollingEnabled="true"
             android:onClick="onImageGalleryClicked"
-            android:nestedScrollingEnabled="true" />
+            android:text="@string/open_existing_image" />
+
     </LinearLayout>
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/gridView"
-        android:layout_weight="0.23"
-        android:numColumns="4" >
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="269dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    </GridView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/bathroom" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/carpet_toilet" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/college" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/cornor" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/cozy" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/cute_living" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/dogo" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:src="@drawable/open" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/open" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -50,7 +50,7 @@ public class PickPhotoActivity extends ApartmentEditActivity{
         setContentView(hciadk.apartmenthunters.R.layout.activity_pick_photo);
 
         // get a reference to the image view that holds the image that the user will see.
-        imgPicture = (ImageView) findViewById(hciadk.apartmenthunters.R.id.imgPicture);
+      //  imgPicture = (ImageView) findViewById(hciadk.apartmenthunters.R.id.imgPicture);
 
     }
 
