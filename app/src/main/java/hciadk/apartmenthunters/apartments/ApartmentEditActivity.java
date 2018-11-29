@@ -110,10 +110,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
         return children;
     }
 
-
-    public void getAdditionalFeatures() {
-
-
+    public void recheckChecklist() {
 
     }
 
@@ -143,8 +140,16 @@ public class ApartmentEditActivity extends AppCompatActivity {
         return isChecked;
     }
 
-    public void recheckCheckboxes() {
+    public void recheckCheckboxes(View[] checkboxes, boolean[] features) {
         //LinearLayout ll =
+
+
+        int j = 0;
+        for (View child:checkboxes) {
+            CheckBox box = (CheckBox) child;
+            box.setChecked(features[j]);
+            j++;
+        }
     }
 
 
@@ -175,6 +180,12 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         editor.putInt("extraFeatSize", extraFeatSize);
 
+        int m = 0;
+        for (boolean boo:extraCheckedFeatures) {
+            editor.putBoolean("extraChecked" + m, boo);
+            m++;
+        }
+
         int i = 0;
         for (boolean boo:checkedCriteria) {
             editor.putBoolean("checked" + i, boo);
@@ -183,7 +194,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
 //        for(boolean boo:extraCheckedFeatures) {
 //            editor.putBoolean("extraFeature")
 //        }
-//
+
 
         editor.apply();
         Log.d("savepreferences", "hello");
@@ -191,9 +202,10 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
     private void LoadPreferences(){
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
-
         LinearLayout ll = findViewById(R.id.criteria_list);
         LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
+
+        //necessary criteria checklist handling
         int childCount = ll.getChildCount();
         boolean[] criteria = new boolean[childCount];
 
@@ -204,25 +216,36 @@ public class ApartmentEditActivity extends AppCompatActivity {
         }
 
         View[] checkboxes = getContentsOfChecklist(ll, childCount);
-        int j = 0;
-        for (View child:checkboxes) {
-            CheckBox box = (CheckBox) child;
-            box.setChecked(criteria[j]);
-            j++;
-        }
+        recheckCheckboxes(checkboxes, criteria);
+
+        //extra feature checklist handling
 
         int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
+        boolean[] extraCriteria = new boolean[extraFeatListSize];
 
         String[] extraFeatures = new String[extraFeatListSize];
         String feature;
 
+
         for(int i = 0; i < extraFeatListSize; i++) {
             feature = sharedPreferences.getString("extraFeat" + i, "No feature defined");
             extraFeatures[i] = feature;
-//            features.add(feature);
         }
 
+
         restoreChecklist(extraFeatureLayout, extraFeatures);
+
+        int extraFeatSize = extraFeatureLayout.getChildCount();
+        View[] extraFeatureBoxes = getContentsOfChecklist(extraFeatureLayout, extraFeatSize);
+
+        for(int i = 0; i < extraFeatSize; i++) {
+            Boolean boo = sharedPreferences.getBoolean("extraChecked" + i, false);
+            extraCriteria[i] = boo;
+        }
+
+        recheckCheckboxes(extraFeatureBoxes, extraCriteria);
+
+
 
     }
 
