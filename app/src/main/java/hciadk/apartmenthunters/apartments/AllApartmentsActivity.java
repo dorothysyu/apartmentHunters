@@ -155,8 +155,6 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentFinalActivity.class));
             }
         });
-        aptRow2.setVisibility(View.INVISIBLE);
-        aptRow3.setVisibility(View.INVISIBLE);
 
         if(!(filters.isEmpty())) {
             if(filters.get(0).equals("2 singles")) {
