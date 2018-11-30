@@ -22,49 +22,50 @@ public class ApartmentFinalActivity extends AppCompatActivity {
 
      //   final LinearLayout ll = findViewById(R.id.linearLayout2);
 
+        getNecessaryCriteria();
         LoadPreferences();
 
     }
 
-    public void reorder() {
 
-        LinearLayout myLinearLayout = findViewById(R.id.linearLayout2);
-        // get number of children
-        int childCount = myLinearLayout.getChildCount();
-        // create array
-        View[] children = new View[childCount];
 
-        // get children of linearlayout
-        for (int i=0; i < childCount; i++){
-            children[i] = myLinearLayout.getChildAt(i);
+    public void getNecessaryCriteria() {
+        final LinearLayout checklist = findViewById(R.id.criteria_list_final);
+        String MY_PREFS_NAME = "featureList";
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        int size = prefs.getInt("size", 0);
+
+        String[] features = new String[size];
+        String feature;
+
+        for(int i = 0; i < size; i++) {
+            feature = prefs.getString("feature" + i, "No feature defined");
+            features[i] = feature;
         }
 
-        //now remove all children
-        myLinearLayout.removeAllViews();
+        restoreChecklist(checklist, features);
+    }
 
-        for (int i=0; i < childCount - 2; i++) {
-            myLinearLayout.addView(children[i]);
+    public void restoreChecklist(LinearLayout myLinearLayout, String[] features) {
+        CheckBox newBox;
+        for(String feat: features) {
+            newBox = new CheckBox(getApplicationContext());
+            newBox.setText(feat);
+            myLinearLayout.addView(newBox);
+            Log.d("all features", feat);
         }
 
-        myLinearLayout.addView(children[childCount - 1]);
-        myLinearLayout.addView(children[childCount - 2]);
     }
 
     private void LoadPreferences(){
         String name = "aptInfo";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
-        LinearLayout ll = findViewById(R.id.criteria_list);
+        LinearLayout ll = findViewById(R.id.criteria_list_final);
         LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
 
         //necessary criteria checklist handling
         int childCount = ll.getChildCount();
-        boolean[] criteria = new boolean[childCount];
 
-        for(int i = 0; i < childCount; i++) {
-            Boolean boo = sharedPreferences.getBoolean("checked" + i, false);
-            Log.d("call sharedpref", boo + "");
-            criteria[i] = boo;
-        }
 
         //extra feature checklist handling
 
