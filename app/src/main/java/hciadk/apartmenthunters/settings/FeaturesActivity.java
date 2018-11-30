@@ -49,9 +49,17 @@ public class FeaturesActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                ArrayList features = getWantedFeatures();
 //                Log.d("print wanted feature", (String) features.get(0));
-                getWantedFeatures();
-                startActivity(new Intent(FeaturesActivity.this,
-                        AllApartmentsActivity.class));
+
+                TextInputEditText priceField = findViewById(R.id.prompt_price);
+                if(priceField.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(),
+                            "Need to input price!", Toast.LENGTH_LONG)
+                            .show();
+                } else {
+                    getWantedFeatures();
+                    startActivity(new Intent(FeaturesActivity.this,
+                            AllApartmentsActivity.class));
+                }
             }
         });
 
@@ -124,6 +132,11 @@ public class FeaturesActivity extends AppCompatActivity {
         }
 
         editor.putInt("size", i);
+
+        TextInputEditText priceField = findViewById(R.id.prompt_price);
+        int price = Integer.valueOf(priceField.getText().toString());
+        editor.putInt("maxPrice", price);
+
 
         editor.apply();
 //        return features;

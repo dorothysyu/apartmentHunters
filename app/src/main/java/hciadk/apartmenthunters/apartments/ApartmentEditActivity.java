@@ -161,6 +161,8 @@ public class ApartmentEditActivity extends AppCompatActivity {
         }
     }
 
+
+
     private void SavePreferences(){
         String name = "aptInfo";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
@@ -276,6 +278,8 @@ public class ApartmentEditActivity extends AppCompatActivity {
         if (price != 0) {
             priceField.setText(String.valueOf(price));
         }
+
+        //getting back filters if filters called
 
 
     }

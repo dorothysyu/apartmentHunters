@@ -57,6 +57,8 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
         final ImageButton filter = findViewById(R.id.filter);
 
+        receiveFilters();
+
         apts.add(aptRow1);
         apts.add(aptRow2);
         apts.add(aptRow3);
@@ -156,6 +158,21 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
         editor.apply();
         Log.d("allapt aptnum", "apt num" + " " + aptNum);
+    }
+
+    public void receiveFilters() {
+        Log.d("WHY ARE YOU SHOWING", "SHOW UP");
+        String name = "filter";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+
+        int size = sharedPreferences.getInt("sizeOfFilters", 0);
+
+        Log.d("sizeOfFilters received", size + "");
+
+        for (int i = 0; i < size; i++) {
+            String filter = sharedPreferences.getString("filter"+i, "Undefined filter");
+            Log.d("received filters", filter);
+        }
     }
 
     public void savePreferences() {

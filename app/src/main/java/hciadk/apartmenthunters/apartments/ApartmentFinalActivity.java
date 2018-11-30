@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import hciadk.apartmenthunters.R;
 public class ApartmentFinalActivity extends AppCompatActivity {
 
     int aptNum;
+    int maxPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             features[i] = feature;
         }
 
+        maxPrice = prefs.getInt("maxPrice", 10000000);
+
 //        //add to "Has additional features" layout from ApartmentActivity
 //        final LinearLayout extrasChecklist = findViewById(R.id.added_feature_list);
 //        String EXTRA = "aptInfo";
@@ -73,15 +77,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             Log.d("all features", feat);
             j++;
         }
-//
-//        int i = 1;
-//        for(String feat: extraFeatures) {
-//            TextView extrasTextView = new TextView(getApplicationContext());
-//            extrasTextView.setText(i + "." + feat);
-//            extrasLayout.addView(extrasTextView);
-//            Log.d("extra features", feat);
-//            i++;
-//        }
     }
 
     public void takeOutUnmatchedCriteria(LinearLayout ll, View[] checkboxes, boolean[] features) {
@@ -112,7 +107,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         String name = "aptInfo";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
         LinearLayout ll = findViewById(R.id.criteria_list_final);
-        LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
 
         //necessary criteria checklist handling
 
@@ -156,25 +150,42 @@ public class ApartmentFinalActivity extends AppCompatActivity {
 
         restoreChecklist(extraFeatLayout, extraFeatures);
         //current size of the linearLayout holding the extra features list
-        int extraFeatSize = extraFeatureLayout.getChildCount();
+        int extraFeatSize = extraFeatLayout.getChildCount();
+        Log.d("extraFeatSize", extraFeatSize + "");
 
         //fills list of booleans that know if criteria was checked off
         for(int i = 0; i < extraFeatSize; i++) {
-            Boolean boo = sharedPreferences.getBoolean("extraChecked" + i, false);
+            Boolean boo = sharedPreferences.getBoolean(
+                    "aptNum" + aptNum + " extraChecked" + i, false);
             extraCriteria[i] = boo;
             Log.d("is Checked off", boo + "");
         }
 
         View[] extraCheckboxes = getContentsOfChecklist(extraFeatLayout, extraFeatLayout.getChildCount());
-//        takeOutUnmatchedCriteria(extraFeatLayout,extraCheckboxes, extraCriteria);
+        Log.d("childcount size", extraFeatLayout.getChildCount() + "");
+       takeOutUnmatchedCriteria(extraFeatLayout,extraCheckboxes, extraCriteria);
 
 
 
         //set price
-        int price = sharedPreferences.getInt("price", 0);
-        TextInputEditText priceField = findViewById(R.id.price_text_edit);
-        if (price != 0) {
-            priceField.setText(String.valueOf(price));
+        int price = sharedPreferences.getInt("aptNum" + aptNum + " price", 0);
+        TextView priceField = findViewById(R.id.price_field_final);
+        String pricePrompt = "Price: $" ;
+        Log.d("price", price + "$");
+        if (price != 0 && price < maxPrice) {
+            priceField.setText(pricePrompt + String.valueOf(price) + "\nWithin your price range!");
         }
+        else if (price != 0 && price > maxPrice) {
+            priceField.setText(pricePrompt + String.valueOf(price) + "\nHigher than your price range");
+        }
+
+        //get extra notes
+        TextView extra = findViewById(R.id.extra_notes_final);
+        String MY_PREFS_NAME = "extraNotes";
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
+        String notes = prefs.getString(MY_PREFS_NAME, "");
+
+        extra.setText(notes);
     }
 }

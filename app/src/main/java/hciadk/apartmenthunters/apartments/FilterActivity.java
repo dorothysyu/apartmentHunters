@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import hciadk.apartmenthunters.R;
@@ -35,6 +36,7 @@ public class FilterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(FilterActivity.this,
                         AllApartmentsActivity.class));
+                sendBackFilters();
                 finish();
             }
         });
@@ -97,6 +99,59 @@ public class FilterActivity extends AppCompatActivity {
         }
 
         restoreChecklist(checklist, filters);
+    }
+
+
+    public View[] getContentsOfChecklist(LinearLayout myLinearLayout, int childCount) {
+        // create array
+        View[] children = new View[childCount];
+        // get children of linearLayout
+        for (int i=0; i < childCount; i++){
+            children[i] = myLinearLayout.getChildAt(i);
+        }
+
+        return children;
+    }
+
+    public ArrayList<String> getCheckedFilters() {
+        LinearLayout ll = findViewById(R.id.filters_list);
+        int size = ll.getChildCount();
+
+        View[] featureViews = getContentsOfChecklist(ll, size);
+        ArrayList<String> checkedFeatures = new ArrayList<>();
+
+        int i = 0;
+        for(View child:featureViews) {
+            if(child instanceof CheckBox) {
+                CheckBox box = (CheckBox) child;
+                if(box.isChecked()) {
+                    checkedFeatures.add(((CheckBox) child).getText().toString());
+                }
+            }
+            i++;
+        }
+
+        return checkedFeatures;
+
+    }
+
+    public void sendBackFilters() {
+        String name = "filter";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        ArrayList<String> features = getCheckedFilters();
+
+        int i = 0;
+        for(String feature:features) {
+            editor.putString("filter" + i, feature);
+            Log.d("checked features" + i, feature);
+            i++;
+        }
+        Log.d("size", i+"");
+        editor.putInt("sizeOfFilters", i);
+        editor.apply();
+
     }
 
 
