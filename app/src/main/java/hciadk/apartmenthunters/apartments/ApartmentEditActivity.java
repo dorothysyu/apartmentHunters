@@ -130,13 +130,11 @@ public class ApartmentEditActivity extends AppCompatActivity {
         // get number of children
         int childCount = myLinearLayout.getChildCount();
         View[] children = getContentsOfChecklist(myLinearLayout, childCount);
-//        ArrayList<View> views = new ArrayList<View>();
 
         boolean[] isChecked = new boolean[childCount];
 
         int i = 0;
         for(View child:children) {
-//            views.add(child);
             Log.d("view text", child.getId() + "");
 
             if(child instanceof CheckBox) {
@@ -171,6 +169,8 @@ public class ApartmentEditActivity extends AppCompatActivity {
         LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
 
         int extraFeatSize = extraFeatureLayout.getChildCount();
+        Log.d("aptEdit extraFeatSize", extraFeatSize + "");
+
 
         boolean[] checkedCriteria = getCheckedFeatures(myLinearLayout);
         View[] extraFeatures = getContentsOfChecklist(extraFeatureLayout, extraFeatSize);
