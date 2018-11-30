@@ -155,14 +155,23 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentFinalActivity.class));
             }
         });
+        aptRow2.setVisibility(View.INVISIBLE);
+        aptRow3.setVisibility(View.INVISIBLE);
 
-        if(filters.get(0).equals("2 singles")) {
-            aptRow2.setVisibility(View.GONE);
-            aptRow3.setVisibility(View.GONE);
+        if(!(filters.isEmpty())) {
+            if(filters.get(0).equals("2 singles")) {
+                aptRow2.setVisibility(View.GONE);
+                aptRow3.setVisibility(View.GONE);
+            }
         }
 
-        String name = "filter";
-        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+
+//        String name = "filter";
+//
+//        SharedPreferences.Editor editor = getSharedPreferences(name, MODE_PRIVATE).edit();
+//        editor.putBoolean("filterOn", false);
+//
+//        editor.apply();
     }
 
     public void whichApt(int aptNum) {
