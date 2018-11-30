@@ -18,9 +18,9 @@ public class ApartmentFinalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apartment_edit);
+        setContentView(R.layout.activity_apartment_final);
 
-        Button extraNotesBtn = findViewById(R.id.extra_notes);
+   /*     Button extraNotesBtn = findViewById(R.id.extra_notes);
      //   ImageButton homeBtn = findViewById(R.id.home);
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
@@ -130,7 +130,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         TextInputEditText priceField = findViewById(R.id.price_text_edit);
         if (price != 0) {
             priceField.setText(String.valueOf(price));
-        }
+        }*/
     }
-
 }

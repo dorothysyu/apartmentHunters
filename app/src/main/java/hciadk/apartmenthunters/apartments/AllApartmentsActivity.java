@@ -2,6 +2,7 @@ package hciadk.apartmenthunters.apartments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,6 +50,10 @@ public class AllApartmentsActivity extends AppCompatActivity {
         final TextView apt2desc = findViewById(R.id.apt2_description);
         final TextView apt3desc = findViewById(R.id.apt3_description);
 
+        final ImageButton view1 = findViewById(R.id.view1);
+        final ImageButton view2 = findViewById(R.id.view2);
+        final ImageButton view3 = findViewById(R.id.view3);
+
         apts.add(aptRow1);
         apts.add(aptRow2);
         apts.add(aptRow3);
@@ -91,6 +96,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
 
             loadPreferences();
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +105,30 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
                 savePreferences();
                 finish();
+            }
+        });
+
+        view1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentFinalActivity.class));
+            }
+        });
+
+        view2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentFinalActivity.class));
+            }
+        });
+
+        view3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentFinalActivity.class));
             }
         });
 
