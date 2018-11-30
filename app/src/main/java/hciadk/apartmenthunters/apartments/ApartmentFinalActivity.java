@@ -47,20 +47,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             features[i] = feature;
         }
 
-//        //add to "Has additional features" layout from ApartmentActivity
-//        final LinearLayout extrasChecklist = findViewById(R.id.added_feature_list);
-//        String EXTRA = "aptInfo";
-//        SharedPreferences extraPrefs = getSharedPreferences(EXTRA, MODE_PRIVATE);
-//        int extraSize = extraPrefs.getInt("extraSize", 0);
-//
-//        String[] extraFeatures = new String[extraSize];
-//        String extraFeature;
-//
-//        for(int i = 0; i < extraSize; i++) {
-//            extraFeature = extraPrefs.getString("extraFeat" + i, "No feature defined");
-//            extraFeatures[i] = extraFeature;
-//        }
-
         restoreChecklist(checklist, features);
     }
 
@@ -73,15 +59,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             Log.d("all features", feat);
             j++;
         }
-//
-//        int i = 1;
-//        for(String feat: extraFeatures) {
-//            TextView extrasTextView = new TextView(getApplicationContext());
-//            extrasTextView.setText(i + "." + feat);
-//            extrasLayout.addView(extrasTextView);
-//            Log.d("extra features", feat);
-//            i++;
-//        }
     }
 
     public void takeOutUnmatchedCriteria(LinearLayout ll, View[] checkboxes, boolean[] features) {

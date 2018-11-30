@@ -12,6 +12,7 @@
 
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/gallery"
         android:layout_width="357dp"
         android:layout_height="373dp">
 
@@ -232,7 +233,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/select"
+            android:id="@+id/select_photos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
