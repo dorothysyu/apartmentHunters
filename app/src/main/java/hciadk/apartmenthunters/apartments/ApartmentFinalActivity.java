@@ -112,7 +112,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         String name = "aptInfo";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
         LinearLayout ll = findViewById(R.id.criteria_list_final);
-        LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
 
         //necessary criteria checklist handling
 
@@ -156,17 +155,20 @@ public class ApartmentFinalActivity extends AppCompatActivity {
 
         restoreChecklist(extraFeatLayout, extraFeatures);
         //current size of the linearLayout holding the extra features list
-        int extraFeatSize = extraFeatureLayout.getChildCount();
+        int extraFeatSize = extraFeatLayout.getChildCount();
+        Log.d("extraFeatSize", extraFeatSize + "");
 
         //fills list of booleans that know if criteria was checked off
         for(int i = 0; i < extraFeatSize; i++) {
-            Boolean boo = sharedPreferences.getBoolean("extraChecked" + i, false);
+            Boolean boo = sharedPreferences.getBoolean(
+                    "aptNum" + aptNum + " extraChecked" + i, false);
             extraCriteria[i] = boo;
             Log.d("is Checked off", boo + "");
         }
 
         View[] extraCheckboxes = getContentsOfChecklist(extraFeatLayout, extraFeatLayout.getChildCount());
-//        takeOutUnmatchedCriteria(extraFeatLayout,extraCheckboxes, extraCriteria);
+        Log.d("childcount size", extraFeatLayout.getChildCount() + "");
+       takeOutUnmatchedCriteria(extraFeatLayout,extraCheckboxes, extraCriteria);
 
 
 
