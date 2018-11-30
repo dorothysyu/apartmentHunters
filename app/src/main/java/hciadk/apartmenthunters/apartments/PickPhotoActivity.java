@@ -30,7 +30,7 @@ public class PickPhotoActivity extends AppCompatActivity {
                 savePreferences(selectedPhotos);*/
 
                 startActivity(new Intent(PickPhotoActivity.this,
-                        ApartmentEditActivity.class));
+                        ApartmentEditActivityAfterAddingPhoto.class));
                 finish();
             }
         });

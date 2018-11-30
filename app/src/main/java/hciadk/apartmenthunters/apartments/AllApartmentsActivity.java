@@ -58,6 +58,11 @@ public class AllApartmentsActivity extends AppCompatActivity {
         final ImageButton view2 = findViewById(R.id.view2);
         final ImageButton view3 = findViewById(R.id.view3);
 
+        final ImageButton edit1 = findViewById(R.id.edit1);
+        final ImageButton edit2 = findViewById(R.id.edit2);
+        final ImageButton edit3 = findViewById(R.id.edit3);
+
+
         final ImageButton filter = findViewById(R.id.filter);
 
         receiveFilters();
@@ -71,11 +76,6 @@ public class AllApartmentsActivity extends AppCompatActivity {
         desc.add(apt3desc);
 
         ImageButton add = findViewById(R.id.add_new_apt);
-//
-//        ArrayList<Integer> results = matchFeature("2 singles");
-//        for(int result:results) {
-//            Log.d("what has 2 singles", result +"");
-//        }
 
 
         filter.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +98,16 @@ public class AllApartmentsActivity extends AppCompatActivity {
             }
         });
 
+        edit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentEditActivity.class));
+
+                whichApt(1);
+            }
+        });
+
         aptRow2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +118,27 @@ public class AllApartmentsActivity extends AppCompatActivity {
             }
         });
 
+        edit2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentEditActivity.class));
+
+                whichApt(2);
+            }
+        });
+
         aptRow3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentEditActivity.class));
+
+                whichApt(3);
+            }
+        });
+
+        edit3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AllApartmentsActivity.this,
@@ -156,10 +186,10 @@ public class AllApartmentsActivity extends AppCompatActivity {
             }
         });
 
-        if(filters.get(0).equals("2 singles")) {
-            aptRow2.setVisibility(View.GONE);
-            aptRow3.setVisibility(View.GONE);
-        }
+//        if(filters.get(0).equals("2 singles")) {
+//            aptRow2.setVisibility(View.GONE);
+//            aptRow3.setVisibility(View.GONE);
+//        }
 
         String name = "filter";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import hciadk.apartmenthunters.R;
 
-public class ApartmentFinalActivity extends AppCompatActivity {
+public class ApartmentFinalActivityAfterAddingPhoto extends AppCompatActivity {
 
     int aptNum;
     int maxPrice;
@@ -18,7 +18,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apartment_final);
+        setContentView(R.layout.activity_apartment_final_after_adding_photo);
         getApt();
 
         getNecessaryCriteria();

@@ -2,24 +2,20 @@ package hciadk.apartmenthunters.apartments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import hciadk.apartmenthunters.R;
 
-public class ApartmentEditActivity extends AppCompatActivity {
+public class ApartmentEditActivityAfterAddingPhoto extends AppCompatActivity {
 
     int aptNum;
     ArrayList<String> aptFeatures = new ArrayList<>();
@@ -27,7 +23,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apartment_edit);
+        setContentView(R.layout.activity_apartment_edit_after_adding_photo);
 
         Button extraNotesBtn = findViewById(R.id.extra_notes);
         final Button addBtn = findViewById(R.id.add_feature);
@@ -46,7 +42,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SavePreferences();
-                startActivity(new Intent(ApartmentEditActivity.this,
+                startActivity(new Intent(ApartmentEditActivityAfterAddingPhoto.this,
                         ExtraNotesActivity.class));
                 finish();
             }
@@ -58,7 +54,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SavePreferences();
-                startActivity(new Intent(ApartmentEditActivity.this,
+                startActivity(new Intent(ApartmentEditActivityAfterAddingPhoto.this,
                         PickPhotoActivity.class));
             }
         });
@@ -78,16 +74,15 @@ public class ApartmentEditActivity extends AppCompatActivity {
         );
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-                                          SavePreferences();
-                                          startActivity(new Intent(ApartmentEditActivity.this,
-                                                  ApartmentFinalActivity.class));
-                                          finish();
-                                      }
-                                  }
+                                       @Override
+                                       public void onClick(View v) {
+                                           SavePreferences();
+                                           startActivity(new Intent(ApartmentEditActivityAfterAddingPhoto.this,
+                                                   ApartmentFinalActivityAfterAddingPhoto.class));
+                                           finish();
+                                       }
+                                   }
         );
-
 
 
     }
