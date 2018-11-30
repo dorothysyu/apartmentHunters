@@ -1,15 +1,13 @@
 package hciadk.apartmenthunters.apartments;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import hciadk.apartmenthunters.R;
 
@@ -34,6 +32,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         aptNum = sharedPreferences.getInt("apt", 0);
         return aptNum;
     }
+
     public void getNecessaryCriteria() {
         final LinearLayout checklist = findViewById(R.id.criteria_list_final);
         String MY_PREFS_NAME = "featureList";
@@ -52,27 +51,39 @@ public class ApartmentFinalActivity extends AppCompatActivity {
     }
 
     public void restoreChecklist(LinearLayout myLinearLayout, String[] features) {
-        CheckBox newBox;
+        TextView featureTextView;
+        int j = 1;
         for(String feat: features) {
-            newBox = new CheckBox(getApplicationContext());
-            newBox.setText(feat);
-            myLinearLayout.addView(newBox);
+            featureTextView = new TextView(getApplicationContext());
+            featureTextView.setText(j + ". " + feat);
+            myLinearLayout.addView(featureTextView);
             Log.d("all features", feat);
+            j++;
+        }
+
+        final LinearLayout extraFeatLayout = findViewById(R.id.added_feature_list);
+        String EXTRA = "extraFeatureList";
+        SharedPreferences extraPref = getSharedPreferences(EXTRA, MODE_PRIVATE);
+        int size = extraPref.getInt("size", 0);
+
+        String[] extraFeatList = new String[size];
+        TextView extraFeatureTextView;
+        int i = 0;
+        for(String extraFeat : extraFeatList) {
+            extraFeat = extraPref.getString("feature" + i, "No feature defined");
+            features[i] = feature;
         }
     }
 
-    public void recheckCheckboxes(View[] checkboxes, boolean[] features) {
+    public void takeOutUnmatchedCriteria(View[] checkboxes, boolean[] features) {
         //LinearLayout ll =
         LinearLayout ll = findViewById(R.id.criteria_list_final);
 
-
         int j = 0;
         for (View child:checkboxes) {
-            CheckBox box = (CheckBox) child;
             if((!features[j])){
                 ll.removeView(child);
             }
-//            box.setChecked(features[j]);
             j++;
         }
     }
@@ -106,7 +117,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         }
 
         View[] checkboxes = getContentsOfChecklist(ll, childCount);
-        recheckCheckboxes(checkboxes, criteria);
+        takeOutUnmatchedCriteria(checkboxes, criteria);
         //extra feature checklist handling
 
         int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
