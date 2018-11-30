@@ -55,7 +55,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
         final ImageButton view2 = findViewById(R.id.view2);
         final ImageButton view3 = findViewById(R.id.view3);
 
-        final Button filter = findViewById(R.id.filter);
+        final ImageButton filter = findViewById(R.id.filter);
 
         apts.add(aptRow1);
         apts.add(aptRow2);
