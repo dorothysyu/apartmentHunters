@@ -27,22 +27,7 @@ import static android.view.View.VISIBLE;
 public class AllApartmentsActivity extends AppCompatActivity {
 
 
-//
-//        aptRow2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(AllApartmentsActivity.this,
-//                        ApartmentEditActivity.class));
-//            }
-//        });
-//
-//        aptRow3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(AllApartmentsActivity.this,
-//                        ApartmentEditActivity.class));
-//            }
-//        });
+
 
     ArrayList<View> apts = new ArrayList<>();
     ArrayList<TextView> desc = new ArrayList<>();
@@ -79,11 +64,32 @@ public class AllApartmentsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentEditActivity.class));
+
+                whichApt(1);
+            }
+        });
+
+        aptRow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentEditActivity.class));
+
+                whichApt(2);
+            }
+        });
+
+        aptRow3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        ApartmentEditActivity.class));
+
+                whichApt(3);
             }
         });
 
 
-//        aptRow1.setVisibility(View.INVISIBLE);
             loadPreferences();
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +102,17 @@ public class AllApartmentsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void whichApt(int aptNum) {
+        String MY_PREFS_NAME = "whichApt";
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+
+        editor.putInt("apt", aptNum);
+
+        editor.apply();
+        Log.d("allapt aptnum", "apt num" + " " + aptNum);
     }
 
     public void savePreferences() {
