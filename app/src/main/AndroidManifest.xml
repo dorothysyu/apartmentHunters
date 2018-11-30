@@ -70,6 +70,10 @@
         <activity
             android:name=".apartments.PickPhotoActivity" />
         <activity android:name=".apartments.AddApartmentActivity"/>
+
+        <activity
+            android:name=".apartments.FilterActivity"
+            />
     </application>
 
 </manifest>

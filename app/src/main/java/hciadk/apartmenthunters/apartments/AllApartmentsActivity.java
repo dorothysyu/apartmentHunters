@@ -46,6 +46,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
         final TableRow aptRow1 = findViewById(R.id.apt1);
         final TableRow aptRow2 = findViewById(R.id.apt2);
         final TableRow aptRow3 = findViewById(R.id.apt3);
+
         final TextView apt1desc = findViewById(R.id.apt1_descr);
         final TextView apt2desc = findViewById(R.id.apt2_description);
         final TextView apt3desc = findViewById(R.id.apt3_description);
@@ -53,6 +54,8 @@ public class AllApartmentsActivity extends AppCompatActivity {
         final ImageButton view1 = findViewById(R.id.view1);
         final ImageButton view2 = findViewById(R.id.view2);
         final ImageButton view3 = findViewById(R.id.view3);
+
+        final Button filter = findViewById(R.id.filter);
 
         apts.add(aptRow1);
         apts.add(aptRow2);
@@ -63,6 +66,16 @@ public class AllApartmentsActivity extends AppCompatActivity {
         desc.add(apt3desc);
 
         ImageButton add = findViewById(R.id.add_new_apt);
+
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AllApartmentsActivity.this,
+                        FilterActivity.class));
+
+                finish();
+            }
+        });
 
         aptRow1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +108,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
         });
 
 
-            loadPreferences();
+        loadPreferences();
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,7 +207,5 @@ public class AllApartmentsActivity extends AppCompatActivity {
             address = prefs.getString("address"+i, "invalid address");
             desc.get(i).setText(address);
         }
-
-
     }
 }
