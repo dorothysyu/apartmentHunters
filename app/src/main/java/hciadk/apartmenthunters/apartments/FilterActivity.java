@@ -66,6 +66,7 @@ public class FilterActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         int size = prefs.getInt("size", 0);
 
+
         String[] features = new String[size];
         String feature;
 
@@ -150,6 +151,8 @@ public class FilterActivity extends AppCompatActivity {
         }
         Log.d("size", i+"");
         editor.putInt("sizeOfFilters", i);
+
+        editor.putBoolean("filterOn", true);
         editor.apply();
 
     }

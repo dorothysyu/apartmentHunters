@@ -191,8 +191,13 @@ public class AllApartmentsActivity extends AppCompatActivity {
 //            aptRow3.setVisibility(View.GONE);
 //        }
 
-        String name = "filter";
-        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+
+//        String name = "filter";
+//
+//        SharedPreferences.Editor editor = getSharedPreferences(name, MODE_PRIVATE).edit();
+//        editor.putBoolean("filterOn", false);
+//
+//        editor.apply();
     }
 
     public void whichApt(int aptNum) {
