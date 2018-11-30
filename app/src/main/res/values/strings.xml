@@ -41,7 +41,7 @@
     <string name="utilities_included"> utilities included</string>
 
     <!-- Strings related to selecting price range -->
-    <string name="prompt_price_range">If applicable, enter price range for total monthly rent (you + roommates).</string>
+    <string name="prompt_price_range">If applicable, enter maximum price for total monthly rent (you + roommates).</string>
     <string name="prompt_hi">Max price</string>
     <string name="title_activity_maps">Map</string>
 
