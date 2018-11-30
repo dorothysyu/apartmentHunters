@@ -77,15 +77,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             Log.d("all features", feat);
             j++;
         }
-//
-//        int i = 1;
-//        for(String feat: extraFeatures) {
-//            TextView extrasTextView = new TextView(getApplicationContext());
-//            extrasTextView.setText(i + "." + feat);
-//            extrasLayout.addView(extrasTextView);
-//            Log.d("extra features", feat);
-//            i++;
-//        }
     }
 
     public void takeOutUnmatchedCriteria(LinearLayout ll, View[] checkboxes, boolean[] features) {
