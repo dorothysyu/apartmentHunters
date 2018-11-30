@@ -17,7 +17,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import hciadk.apartmenthunters.R;
 import hciadk.apartmenthunters.settings.AddRoommatesActivity;
@@ -32,6 +34,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
     ArrayList<View> apts = new ArrayList<>();
     ArrayList<TextView> desc = new ArrayList<>();
+    ArrayList<String> filters = new ArrayList<>();
     @Override
     protected void onStart(){
 
@@ -68,6 +71,12 @@ public class AllApartmentsActivity extends AppCompatActivity {
         desc.add(apt3desc);
 
         ImageButton add = findViewById(R.id.add_new_apt);
+//
+//        ArrayList<Integer> results = matchFeature("2 singles");
+//        for(int result:results) {
+//            Log.d("what has 2 singles", result +"");
+//        }
+
 
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,6 +156,13 @@ public class AllApartmentsActivity extends AppCompatActivity {
             }
         });
 
+        if(filters.get(0).equals("2 singles")) {
+            aptRow2.setVisibility(View.GONE);
+            aptRow3.setVisibility(View.GONE);
+        }
+
+        String name = "filter";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
     }
 
     public void whichApt(int aptNum) {
@@ -161,7 +177,6 @@ public class AllApartmentsActivity extends AppCompatActivity {
     }
 
     public void receiveFilters() {
-        Log.d("WHY ARE YOU SHOWING", "SHOW UP");
         String name = "filter";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
 
@@ -171,9 +186,51 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
         for (int i = 0; i < size; i++) {
             String filter = sharedPreferences.getString("filter"+i, "Undefined filter");
+            filters.add(filter);
             Log.d("received filters", filter);
         }
     }
+
+
+    public void filter() {
+//
+//        for(String filter:filters) {
+//            matchFeature(filter);
+//        }
+    }
+
+
+    public ArrayList<Integer> matchFeature(String matchFeat) {
+        String name = "aptInfo";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+
+        ArrayList<Integer> hasFeature = new ArrayList<>();
+
+        String feature;
+//
+//        for(int i = 1; i < 4; i ++) {
+//            size = sharedPreferences.getInt("allFeaturesSize"+i, 0);
+//            for(int j = 0; j < size; j++) {
+//                feature = sharedPreferences.getString("allFeatures"+i,"");
+//                if(matchFeat == feature) {
+//                    hasFeature.add(i);
+//                }
+//            }
+//        }
+
+        int size = sharedPreferences.getInt("allFeaturesSize1", 0);
+        Log.d("apt1 size", size + "");
+        for (int i = 0; i < size; i++) {
+            feature = sharedPreferences.getString("allFeatures" + i, "");
+            Log.d("apt1 features", feature);
+            Log.d(matchFeat, feature);
+            if (matchFeat == feature) {
+                hasFeature.add(1);
+            }
+        }
+        return hasFeature;
+    }
+
 
     public void savePreferences() {
         /* so we need to make a list of the apartments visibility

@@ -12,10 +12,12 @@ import hciadk.apartmenthunters.R;
 
 public class ExtraNotesActivity extends AppCompatActivity {
 
+    int aptNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extra_notes);
+        getApt();
 
 
         Button extraNotesBtn = findViewById(R.id.save_extra_notes);
@@ -41,8 +43,16 @@ public class ExtraNotesActivity extends AppCompatActivity {
 
         String MY_PREFS_NAME = "extraNotes";
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putString(MY_PREFS_NAME, notes);
+        editor.putString(MY_PREFS_NAME+aptNum , notes);
         editor.apply();
+    }
+
+    public int getApt() {
+        String MY_PREFS_NAME = "whichApt";
+
+        SharedPreferences sharedPreferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        aptNum = sharedPreferences.getInt("apt", 0);
+        return aptNum;
     }
 
     private void loadPreferences() {

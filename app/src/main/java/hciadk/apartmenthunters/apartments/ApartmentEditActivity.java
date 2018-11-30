@@ -22,6 +22,7 @@ import hciadk.apartmenthunters.R;
 public class ApartmentEditActivity extends AppCompatActivity {
 
     int aptNum;
+    ArrayList<String> aptFeatures = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,7 +142,10 @@ public class ApartmentEditActivity extends AppCompatActivity {
                 CheckBox box = (CheckBox) child;
                 boolean bool = box.isChecked();
                 isChecked[i] = bool;
-                Log.d("is feat checked", bool + "");
+                Log.d("is feat checked", bool + " " + box.getText());
+                if(bool) {
+                    aptFeatures.add(box.getText().toString());
+                }
                 i += 1;
             }
         }
@@ -177,6 +181,11 @@ public class ApartmentEditActivity extends AppCompatActivity {
         boolean[] checkedCriteria = getCheckedFeatures(myLinearLayout);
         View[] extraFeatures = getContentsOfChecklist(extraFeatureLayout, extraFeatSize);
         boolean[] extraCheckedFeatures = getCheckedFeatures(extraFeatureLayout);
+
+        editor.putInt("allFeaturesSize"+aptNum, aptFeatures.size());
+        for(String feats:aptFeatures) {
+            editor.putString("allFeatures" + aptNum, feats);
+        }
 
         String[] extraFeatList = new String[extraFeatSize];
         int k = 0;

@@ -51,20 +51,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
 
         maxPrice = prefs.getInt("maxPrice", 10000000);
 
-//        //add to "Has additional features" layout from ApartmentActivity
-//        final LinearLayout extrasChecklist = findViewById(R.id.added_feature_list);
-//        String EXTRA = "aptInfo";
-//        SharedPreferences extraPrefs = getSharedPreferences(EXTRA, MODE_PRIVATE);
-//        int extraSize = extraPrefs.getInt("extraSize", 0);
-//
-//        String[] extraFeatures = new String[extraSize];
-//        String extraFeature;
-//
-//        for(int i = 0; i < extraSize; i++) {
-//            extraFeature = extraPrefs.getString("extraFeat" + i, "No feature defined");
-//            extraFeatures[i] = extraFeature;
-//        }
-
         restoreChecklist(checklist, features);
     }
 
@@ -72,7 +58,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         int j = 1;
         for(String feat: features) {
             TextView featureTextView = new TextView(getApplicationContext());
-            featureTextView.setText(j + ". " + feat);
+            featureTextView.setText(feat);
             myLinearLayout.addView(featureTextView);
             Log.d("all features", feat);
             j++;
@@ -184,7 +170,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         String MY_PREFS_NAME = "extraNotes";
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
 
-        String notes = prefs.getString(MY_PREFS_NAME, "");
+        String notes = prefs.getString(MY_PREFS_NAME+aptNum, "");
 
         extra.setText(notes);
     }
