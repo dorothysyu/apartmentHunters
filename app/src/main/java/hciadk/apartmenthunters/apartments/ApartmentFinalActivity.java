@@ -14,13 +14,13 @@ import hciadk.apartmenthunters.R;
 public class ApartmentFinalActivity extends AppCompatActivity {
 
     int aptNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apartment_final);
         getApt();
 
-     //   final LinearLayout ll = findViewById(R.id.linearLayout2);
         getNecessaryCriteria();
         LoadPreferences();
     }
@@ -47,37 +47,46 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             features[i] = feature;
         }
 
+//        //add to "Has additional features" layout from ApartmentActivity
+//        final LinearLayout extrasChecklist = findViewById(R.id.added_feature_list);
+//        String EXTRA = "aptInfo";
+//        SharedPreferences extraPrefs = getSharedPreferences(EXTRA, MODE_PRIVATE);
+//        int extraSize = extraPrefs.getInt("extraSize", 0);
+//
+//        String[] extraFeatures = new String[extraSize];
+//        String extraFeature;
+//
+//        for(int i = 0; i < extraSize; i++) {
+//            extraFeature = extraPrefs.getString("extraFeat" + i, "No feature defined");
+//            extraFeatures[i] = extraFeature;
+//        }
+
         restoreChecklist(checklist, features);
     }
 
     public void restoreChecklist(LinearLayout myLinearLayout, String[] features) {
-        TextView featureTextView;
         int j = 1;
         for(String feat: features) {
-            featureTextView = new TextView(getApplicationContext());
+            TextView featureTextView = new TextView(getApplicationContext());
             featureTextView.setText(j + ". " + feat);
             myLinearLayout.addView(featureTextView);
             Log.d("all features", feat);
             j++;
         }
-
-        final LinearLayout extraFeatLayout = findViewById(R.id.added_feature_list);
-        String EXTRA = "extraFeatureList";
-        SharedPreferences extraPref = getSharedPreferences(EXTRA, MODE_PRIVATE);
-        int size = extraPref.getInt("size", 0);
-
-        String[] extraFeatList = new String[size];
-        TextView extraFeatureTextView;
-        int i = 0;
-        for(String extraFeat : extraFeatList) {
-            extraFeat = extraPref.getString("feature" + i, "No feature defined");
-            features[i] = feature;
-        }
+//
+//        int i = 1;
+//        for(String feat: extraFeatures) {
+//            TextView extrasTextView = new TextView(getApplicationContext());
+//            extrasTextView.setText(i + "." + feat);
+//            extrasLayout.addView(extrasTextView);
+//            Log.d("extra features", feat);
+//            i++;
+//        }
     }
 
-    public void takeOutUnmatchedCriteria(View[] checkboxes, boolean[] features) {
+    public void takeOutUnmatchedCriteria(LinearLayout ll, View[] checkboxes, boolean[] features) {
         //LinearLayout ll =
-        LinearLayout ll = findViewById(R.id.criteria_list_final);
+//        LinearLayout ll = findViewById(R.id.criteria_list_final);
 
         int j = 0;
         for (View child:checkboxes) {
@@ -117,27 +126,49 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         }
 
         View[] checkboxes = getContentsOfChecklist(ll, childCount);
-        takeOutUnmatchedCriteria(checkboxes, criteria);
+        takeOutUnmatchedCriteria(ll, checkboxes, criteria);
         //extra feature checklist handling
 
+        LinearLayout extraFeatLayout = findViewById(R.id.added_feature_list);
+
+        //size of the list of extra features
         int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
+
+        //if the criteria was checked off, true. if not, false. INITIALIZED
         boolean[] extraCriteria = new boolean[extraFeatListSize];
 
+        //actual list of extra features INITIALIZED (so empty)
         String[] extraFeatures = new String[extraFeatListSize];
+
+        Log.d("extra feature size", extraFeatListSize+"");
+
         String feature;
 
-
+        //populates list of extra features
         for(int i = 0; i < extraFeatListSize; i++) {
             feature = sharedPreferences.getString("extraFeat" + i, "No feature defined");
             extraFeatures[i] = feature;
         }
 
+        for(String extraFeat:extraFeatures) {
+            Log.d("Extra features", extraFeat);
+        }
+
+        restoreChecklist(extraFeatLayout, extraFeatures);
+        //current size of the linearLayout holding the extra features list
         int extraFeatSize = extraFeatureLayout.getChildCount();
 
+        //fills list of booleans that know if criteria was checked off
         for(int i = 0; i < extraFeatSize; i++) {
             Boolean boo = sharedPreferences.getBoolean("extraChecked" + i, false);
             extraCriteria[i] = boo;
+            Log.d("is Checked off", boo + "");
         }
+
+        View[] extraCheckboxes = getContentsOfChecklist(extraFeatLayout, extraFeatLayout.getChildCount());
+//        takeOutUnmatchedCriteria(extraFeatLayout,extraCheckboxes, extraCriteria);
+
+
 
         //set price
         int price = sharedPreferences.getInt("price", 0);
