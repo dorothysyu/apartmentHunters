@@ -51,7 +51,7 @@
     <string name="filter">Filter by:</string>
 
     <!-- Strings for the apartment page -->
-    <string name="apt_edit_header">Edit Apartment Info</string>
+    <string name="apt_edit_header">Edit Apartment Information</string>
     <string name="apt_address"> 753 Columbus Avenue, Apt. #3 Roxbury Crossing, MA 02120</string>
     <string name="prompt_match">Compare to my checklist</string>
     <string name="action_add_price">Add price</string>

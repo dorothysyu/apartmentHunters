@@ -156,9 +156,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
         }
     }
 
-
     private void SavePreferences(){
-        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        String name = "aptInfo";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         LinearLayout myLinearLayout = findViewById(R.id.criteria_list);
         LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
@@ -211,7 +211,8 @@ public class ApartmentEditActivity extends AppCompatActivity {
     }
 
     private void LoadPreferences(){
-        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        String name = "aptInfo";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
         LinearLayout ll = findViewById(R.id.criteria_list);
         LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
 

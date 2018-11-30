@@ -1,9 +1,11 @@
 package hciadk.apartmenthunters.apartments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,35 +34,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             }
         });
 
-/*        Button features = findViewById(R.id.prompt_match);
-
-        features.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentEditActivity.this,
-                        IndividualChecklistActivity.class));
-            }
-        });*/
-
-
-/*        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentEditActivity.this,
-                        AllApartmentsActivity.class));
-            }
-        });*/
-
-/*        Button backToMain = findViewById(R.id.back_to_main);
-
-        backToMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentEditActivity.this,
-                        MainActivity.class));
-            }
-        });*/
-
         Button addPhotos = findViewById(R.id.prompt_photos);
 
         addPhotos.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +60,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         );
 
 
+        LoadPreferences();
 
     }
 
@@ -113,4 +87,50 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         myLinearLayout.addView(children[childCount - 1]);
         myLinearLayout.addView(children[childCount - 2]);
     }
+
+    private void LoadPreferences(){
+        String name = "aptInfo";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+        LinearLayout ll = findViewById(R.id.criteria_list);
+        LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
+
+        //necessary criteria checklist handling
+        int childCount = ll.getChildCount();
+        boolean[] criteria = new boolean[childCount];
+
+        for(int i = 0; i < childCount; i++) {
+            Boolean boo = sharedPreferences.getBoolean("checked" + i, false);
+            Log.d("call sharedpref", boo + "");
+            criteria[i] = boo;
+        }
+
+        //extra feature checklist handling
+
+        int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
+        boolean[] extraCriteria = new boolean[extraFeatListSize];
+
+        String[] extraFeatures = new String[extraFeatListSize];
+        String feature;
+
+
+        for(int i = 0; i < extraFeatListSize; i++) {
+            feature = sharedPreferences.getString("extraFeat" + i, "No feature defined");
+            extraFeatures[i] = feature;
+        }
+
+        int extraFeatSize = extraFeatureLayout.getChildCount();
+
+        for(int i = 0; i < extraFeatSize; i++) {
+            Boolean boo = sharedPreferences.getBoolean("extraChecked" + i, false);
+            extraCriteria[i] = boo;
+        }
+
+        //set price
+        int price = sharedPreferences.getInt("price", 0);
+        TextInputEditText priceField = findViewById(R.id.price_text_edit);
+        if (price != 0) {
+            priceField.setText(String.valueOf(price));
+        }
+    }
+
 }
