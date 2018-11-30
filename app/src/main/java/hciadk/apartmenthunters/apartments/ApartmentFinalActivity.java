@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -150,10 +151,21 @@ public class ApartmentFinalActivity extends AppCompatActivity {
 
 
         //set price
-        int price = sharedPreferences.getInt("price", 0);
-        TextInputEditText priceField = findViewById(R.id.price_text_edit);
+        int price = sharedPreferences.getInt("aptNum" + aptNum + " price", 0);
+        TextView priceField = findViewById(R.id.price_field_final);
+        String pricePrompt = "Price: $" ;
+        Log.d("price", price + "$");
         if (price != 0) {
-            priceField.setText(String.valueOf(price));
+            priceField.setText(pricePrompt + String.valueOf(price));
         }
+
+        //get extra notes
+        TextView extra = findViewById(R.id.extra_notes_final);
+        String MY_PREFS_NAME = "extraNotes";
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
+        String notes = prefs.getString(MY_PREFS_NAME, "");
+
+        extra.setText(notes);
     }
 }
