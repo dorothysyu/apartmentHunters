@@ -15,6 +15,7 @@ import hciadk.apartmenthunters.R;
 public class ApartmentFinalActivity extends AppCompatActivity {
 
     int aptNum;
+    int maxPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             feature = prefs.getString("feature" + i, "No feature defined");
             features[i] = feature;
         }
+
+        maxPrice = prefs.getInt("maxPrice", 10000000);
 
 //        //add to "Has additional features" layout from ApartmentActivity
 //        final LinearLayout extrasChecklist = findViewById(R.id.added_feature_list);
@@ -178,8 +181,11 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         TextView priceField = findViewById(R.id.price_field_final);
         String pricePrompt = "Price: $" ;
         Log.d("price", price + "$");
-        if (price != 0) {
-            priceField.setText(pricePrompt + String.valueOf(price));
+        if (price != 0 && price < maxPrice) {
+            priceField.setText(pricePrompt + String.valueOf(price) + "\nWithin your price range!");
+        }
+        else if (price != 0 && price > maxPrice) {
+            priceField.setText(pricePrompt + String.valueOf(price) + "\nHigher than your price range");
         }
 
         //get extra notes
