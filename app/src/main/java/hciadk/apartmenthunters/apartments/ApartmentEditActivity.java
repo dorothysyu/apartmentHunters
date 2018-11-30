@@ -112,7 +112,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
             myLinearLayout.addView(newBox);
             Log.d("all features", feat);
         }
-
     }
 
     public View[] getContentsOfChecklist(LinearLayout myLinearLayout, int childCount) {

@@ -15,20 +15,25 @@ import hciadk.apartmenthunters.R;
 
 public class ApartmentFinalActivity extends AppCompatActivity {
 
+    int aptNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apartment_final);
+        getApt();
 
      //   final LinearLayout ll = findViewById(R.id.linearLayout2);
-
         getNecessaryCriteria();
         LoadPreferences();
-
     }
 
+    public int getApt() {
+        String MY_PREFS_NAME = "whichApt";
 
-
+        SharedPreferences sharedPreferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        aptNum = sharedPreferences.getInt("apt", 0);
+        return aptNum;
+    }
     public void getNecessaryCriteria() {
         final LinearLayout checklist = findViewById(R.id.criteria_list_final);
         String MY_PREFS_NAME = "featureList";
@@ -54,7 +59,33 @@ public class ApartmentFinalActivity extends AppCompatActivity {
             myLinearLayout.addView(newBox);
             Log.d("all features", feat);
         }
+    }
 
+    public void recheckCheckboxes(View[] checkboxes, boolean[] features) {
+        //LinearLayout ll =
+        LinearLayout ll = findViewById(R.id.criteria_list_final);
+
+
+        int j = 0;
+        for (View child:checkboxes) {
+            CheckBox box = (CheckBox) child;
+            if((!features[j])){
+                ll.removeView(child);
+            }
+//            box.setChecked(features[j]);
+            j++;
+        }
+    }
+
+    public View[] getContentsOfChecklist(LinearLayout myLinearLayout, int childCount) {
+        // create array
+        View[] children = new View[childCount];
+        // get children of linearLayout
+        for (int i=0; i < childCount; i++){
+            children[i] = myLinearLayout.getChildAt(i);
+        }
+
+        return children;
     }
 
     private void LoadPreferences(){
@@ -64,9 +95,18 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         LinearLayout extraFeatureLayout = findViewById(R.id.added_feature_list);
 
         //necessary criteria checklist handling
+
         int childCount = ll.getChildCount();
+        boolean[] criteria = new boolean[childCount];
 
+        for(int i = 0; i < childCount; i++) {
+            Boolean boo = sharedPreferences.getBoolean(
+                    "aptNum" + aptNum + " checked" + i, false);
+            criteria[i] = boo;
+        }
 
+        View[] checkboxes = getContentsOfChecklist(ll, childCount);
+        recheckCheckboxes(checkboxes, criteria);
         //extra feature checklist handling
 
         int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
