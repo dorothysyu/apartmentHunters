@@ -21,6 +21,8 @@ import hciadk.apartmenthunters.R;
 
 public class ApartmentEditActivity extends AppCompatActivity {
 
+    int aptNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,28 +32,13 @@ public class ApartmentEditActivity extends AppCompatActivity {
         final Button addBtn = findViewById(R.id.add_feature);
         final LinearLayout ll = findViewById(R.id.linearLayout2);
         final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
-        final LinearLayout checklist = findViewById(R.id.criteria_list);
         final LinearLayout extraChecklist = findViewById(R.id.added_feature_list);
 
-        String MY_PREFS_NAME = "featureList";
-        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-        int size = prefs.getInt("size", 0);
-
-        String[] features = new String[size];
-        String feature;
-
-        for(int i = 0; i < size; i++) {
-            feature = prefs.getString("feature" + i, "No feature defined");
-            features[i] = feature;
-//            features.add(feature);
-        }
-
-        restoreChecklist(checklist, features);
+        getNecessaryCriteria();
+        getApt();
+        Log.d("aptNum", aptNum + "");
         LoadPreferences();
 
-
-//        MY_PREFS_NAME = "extraNotes";
-//        prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
 
         extraNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +79,31 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
     }
 
+    public void getNecessaryCriteria() {
+        final LinearLayout checklist = findViewById(R.id.criteria_list);
+        String MY_PREFS_NAME = "featureList";
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        int size = prefs.getInt("size", 0);
+
+        String[] features = new String[size];
+        String feature;
+
+        for(int i = 0; i < size; i++) {
+            feature = prefs.getString("feature" + i, "No feature defined");
+            features[i] = feature;
+        }
+
+        restoreChecklist(checklist, features);
+    }
+
+    public int getApt() {
+        String MY_PREFS_NAME = "whichApt";
+
+        SharedPreferences sharedPreferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        aptNum = sharedPreferences.getInt("apt", 0);
+        return aptNum;
+    }
+
     public void restoreChecklist(LinearLayout myLinearLayout, String[] features) {
         CheckBox newBox;
         for(String feat: features) {
@@ -112,10 +124,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
         }
 
         return children;
-    }
-
-    public void recheckChecklist() {
-
     }
 
     public boolean[] getCheckedFeatures(LinearLayout myLinearLayout) {
@@ -176,23 +184,25 @@ public class ApartmentEditActivity extends AppCompatActivity {
             if(feature instanceof CheckBox){
                 CheckBox box = (CheckBox) feature;
                 String content = box.getText().toString();
+//                editor.putString("aptNum" + aptNum + " extraFeat" + k, content);
                 editor.putString("extraFeat" + k, content);
                 extraFeatList[k] = content;
                 k++;
             }
         }
 
+//        editor.putInt("aptNum" + aptNum + " extraFeatSize", extraFeatSize);
         editor.putInt("extraFeatSize", extraFeatSize);
 
         int m = 0;
         for (boolean boo:extraCheckedFeatures) {
-            editor.putBoolean("extraChecked" + m, boo);
+            editor.putBoolean("aptNum" + aptNum + " extraChecked" + m, boo);
             m++;
         }
 
         int i = 0;
         for (boolean boo:checkedCriteria) {
-            editor.putBoolean("checked" + i, boo);
+            editor.putBoolean("aptNum" + aptNum + " checked" + i, boo);
             i+=1;
         }
 
@@ -204,7 +214,7 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
             Log.d("price", price + "");
 
-            editor.putInt("price", price);
+            editor.putInt("aptNum" + aptNum + " price", price);
         }
 
         editor.apply();
@@ -220,8 +230,8 @@ public class ApartmentEditActivity extends AppCompatActivity {
         boolean[] criteria = new boolean[childCount];
 
         for(int i = 0; i < childCount; i++) {
-            Boolean boo = sharedPreferences.getBoolean("checked" + i, false);
-            Log.d("call sharedpref", boo + "");
+            Boolean boo = sharedPreferences.getBoolean(
+                    "aptNum" + aptNum + " checked" + i, false);
             criteria[i] = boo;
         }
 
@@ -230,7 +240,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
         //extra feature checklist handling
 
-        int extraFeatListSize = sharedPreferences.getInt("extraFeatSize", 0);
+        int extraFeatListSize = sharedPreferences.getInt(
+//                "aptNum" + aptNum + " extraFeatSize", 0);
+                "extraFeatSize", 0);
         boolean[] extraCriteria = new boolean[extraFeatListSize];
 
         String[] extraFeatures = new String[extraFeatListSize];
@@ -238,7 +250,9 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
 
         for(int i = 0; i < extraFeatListSize; i++) {
-            feature = sharedPreferences.getString("extraFeat" + i, "No feature defined");
+            feature = sharedPreferences.getString(
+//                    "aptNum" + aptNum + " extraFeat" + i, "No feature defined");
+                    "extraFeat" + i, "No feature defined");
             extraFeatures[i] = feature;
         }
 
@@ -249,14 +263,15 @@ public class ApartmentEditActivity extends AppCompatActivity {
         View[] extraFeatureBoxes = getContentsOfChecklist(extraFeatureLayout, extraFeatSize);
 
         for(int i = 0; i < extraFeatSize; i++) {
-            Boolean boo = sharedPreferences.getBoolean("extraChecked" + i, false);
+            Boolean boo = sharedPreferences.getBoolean(
+                    "aptNum" + aptNum + " extraChecked" + i, false);
             extraCriteria[i] = boo;
         }
 
         recheckCheckboxes(extraFeatureBoxes, extraCriteria);
 
         //set price
-        int price = sharedPreferences.getInt("price", 0);
+        int price = sharedPreferences.getInt("aptNum" + aptNum + " price", 0);
         TextInputEditText priceField = findViewById(R.id.price_text_edit);
         if (price != 0) {
             priceField.setText(String.valueOf(price));
@@ -269,5 +284,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
     public void onBackPressed() {
         SavePreferences();
         super.onBackPressed();
+        finish();
     }
 }

@@ -24,6 +24,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import hciadk.apartmenthunters.R;
 
@@ -56,18 +57,26 @@ public class AddApartmentActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                String address = mEditWordView.getText().toString();
 
-                String MY_PREFS_NAME = "newAddress";
+                if(address.equals("")) {
+                    Toast.makeText(getApplicationContext(),
+                            "Not a valid address!", Toast.LENGTH_LONG)
+                            .show();
+                }
+                else {
+                    String MY_PREFS_NAME = "newAddress";
 
-                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-                //pass the address
-                editor.putString("address" + k, mEditWordView.getText().toString());
-                //pass the apt to make visible
-                editor.putInt("flipVisibility", k);
-                editor.apply();
-                startActivity(new Intent(AddApartmentActivity.this,
-                        AllApartmentsActivity.class));
-                finish();
+                    SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+                    //pass the address
+                    editor.putString("address" + k, mEditWordView.getText().toString());
+                    //pass the apt to make visible
+                    editor.putInt("flipVisibility", k);
+                    editor.apply();
+                    startActivity(new Intent(AddApartmentActivity.this,
+                            AllApartmentsActivity.class));
+                    finish();
+                }
             }
         });
     }
