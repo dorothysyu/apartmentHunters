@@ -20,45 +20,7 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apartment_final);
 
-   /*     Button extraNotesBtn = findViewById(R.id.extra_notes);
-     //   ImageButton homeBtn = findViewById(R.id.home);
-        final Button addBtn = findViewById(R.id.add_feature);
-        final LinearLayout ll = findViewById(R.id.linearLayout2);
-        final TextInputEditText t = findViewById(R.id.prompt_add_own_feature);
-
-        extraNotesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentFinalActivity.this,
-                        ExtraNotesActivity.class));
-            }
-        });
-
-        Button addPhotos = findViewById(R.id.prompt_photos);
-
-        addPhotos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ApartmentFinalActivity.this,
-                        PickPhotoActivity.class));
-            }
-        });
-
-        addBtn.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-                                          String content = t.getText().toString(); //gets you the contents of edit text
-                                          CheckBox cb = new CheckBox(getApplicationContext());
-                                          cb.setChecked(true);
-                                          cb.setText(content);
-                                          ll.addView(cb);
-                                          reorder();
-                                          t.setText("");
-                                      }
-                                  }
-
-        );
-
+     //   final LinearLayout ll = findViewById(R.id.linearLayout2);
 
         LoadPreferences();
 
@@ -130,6 +92,6 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         TextInputEditText priceField = findViewById(R.id.price_text_edit);
         if (price != 0) {
             priceField.setText(String.valueOf(price));
-        }*/
+        }
     }
 }
