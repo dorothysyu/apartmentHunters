@@ -167,6 +167,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentFinalActivity.class));
+                whichApt(1);
             }
         });
 
@@ -175,6 +176,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentFinalActivity.class));
+                whichApt(2);
             }
         });
 
@@ -183,6 +185,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentFinalActivity.class));
+                whichApt(3);
             }
         });
 
