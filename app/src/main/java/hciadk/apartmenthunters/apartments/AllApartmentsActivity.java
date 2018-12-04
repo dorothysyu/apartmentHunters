@@ -37,10 +37,37 @@ public class AllApartmentsActivity extends AppCompatActivity {
     ArrayList<String> filters = new ArrayList<>();
     @Override
     protected void onStart(){
+        final TableRow aptRow1 = findViewById(R.id.apt1);
+        final TableRow aptRow2 = findViewById(R.id.apt2);
+        final TableRow aptRow3 = findViewById(R.id.apt3);
+
+        final TextView apt1desc = findViewById(R.id.apt1_descr);
+        final TextView apt2desc = findViewById(R.id.apt2_description);
+        final TextView apt3desc = findViewById(R.id.apt3_description);
+
+        final ImageButton view1 = findViewById(R.id.view1);
+        final ImageButton view2 = findViewById(R.id.view2);
+        final ImageButton view3 = findViewById(R.id.view3);
+
+        final ImageButton edit1 = findViewById(R.id.edit1);
+        final ImageButton edit2 = findViewById(R.id.edit2);
+        final ImageButton edit3 = findViewById(R.id.edit3);
+
+
+        final ImageButton filter = findViewById(R.id.filter);
 
         super.onStart();
 
         loadPreferences();
+        receiveFilters();
+        applyFilter();
+//
+//        if(!(filters.isEmpty())) {
+//            Log.d("filters is not empty", "yep");
+//            aptRow1.setVisibility(View.GONE);
+//            aptRow2.setVisibility(View.GONE);
+//            aptRow3.setVisibility(View.GONE);
+//        }
     }
 
     @Override
@@ -67,7 +94,6 @@ public class AllApartmentsActivity extends AppCompatActivity {
 
         final ImageButton filter = findViewById(R.id.filter);
 
-        receiveFilters();
 
         apts.add(aptRow1);
         apts.add(aptRow2);
@@ -211,7 +237,6 @@ public class AllApartmentsActivity extends AppCompatActivity {
 //
 //        editor.apply();
 
-        getAttributes();
     }
 
     public void whichApt(int aptNum) {
@@ -228,8 +253,11 @@ public class AllApartmentsActivity extends AppCompatActivity {
     public void receiveFilters() {
         String name = "filter";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        int size = sharedPreferences.getInt("sizeOfFilters", 0);
+        String sizeOfFilters = "sizeOfFilters";
+
+        int size = sharedPreferences.getInt(sizeOfFilters, 0);
 
         Log.d("sizeOfFilters received", size + "");
 
@@ -238,6 +266,25 @@ public class AllApartmentsActivity extends AppCompatActivity {
             filters.add(filter);
             Log.d("received filters", filter);
         }
+        editor.remove(sizeOfFilters);
+        editor.commit();
+
+    }
+
+    public void applyFilter(){
+
+        if(!(filters.isEmpty())) {
+            Log.d("isFilterEmpty", "no");
+            checkForFeature(filters.get(0));
+        }
+
+
+//        int i = 0;
+//        while(!(filters.isEmpty())) {
+//            Log.d("isFilterEmpty", "no");
+//            checkForFeature(filters.get(i));
+//            i++;
+//        }
     }
 
 
@@ -248,11 +295,15 @@ public class AllApartmentsActivity extends AppCompatActivity {
 //        }
     }
 
-    public void getAttributes() {
+    public void checkForFeature(String matchFeat) {
+
+        final TableRow aptRow1 = findViewById(R.id.apt1);
+        final TableRow aptRow2 = findViewById(R.id.apt2);
+        final TableRow aptRow3 = findViewById(R.id.apt3);
 
         String name = "filter";
         SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         ArrayList<Integer> hasFeature = new ArrayList<>();
 
@@ -265,24 +316,102 @@ public class AllApartmentsActivity extends AppCompatActivity {
         size3 = sharedPreferences.getInt("allFeaturesSize3", 0);
 
         Log.d("size", "1:" + size1+ "2:" + size2 + "3:"+size3);
+//
+        aptRow1.setVisibility(View.GONE);
+        aptRow2.setVisibility(View.GONE);
+        aptRow3.setVisibility(View.GONE);
 
-        for(int i = 0; i < size1; i++) {
-            feature = sharedPreferences.getString(1+"allFeatures" +i, "");
-            Log.d("apt1 feats", feature);
+        boolean aptRow1Visible, aptRow2Visible, aptRow3Visible;
+
+        aptRow1Visible = false;
+        aptRow2Visible = true;
+        aptRow3Visible = true;
+
+        for(int s = 0; s < filters.size(); s++) {
+            aptRow1Visible = false;
+            String filterFeat = filters.get(s);
+            for (int i = 0; i < size1; i++) {
+                feature = sharedPreferences.getString(1 + "allFeatures" + i, "");
+                Log.d("apt1 feats", feature);
+//                if (!(feature.equals(matchFeat))) {
+                if (feature.equals(filterFeat)) {
+                    aptRow1Visible = true;
+                    break;
+                }
+            }
+            if (!(aptRow1Visible)) {
+                aptRow1.setVisibility(View.GONE);
+                break;
+            }
+            aptRow1.setVisibility(VISIBLE);
         }
 
-        for(int i = 0; i < size2; i++) {
-            feature = sharedPreferences.getString(2+"allFeatures" +i, "");
-            Log.d("apt2 feats", feature);
+
+        for(int s = 0; s < filters.size(); s++) {
+            aptRow2Visible = false;
+            String filterFeat = filters.get(s);
+            for (int i = 0; i < size2; i++) {
+                feature = sharedPreferences.getString(2 + "allFeatures" + i, "");
+                Log.d("apt2 feats", feature);
+//                if (!(feature.equals(matchFeat))) {
+                if (feature.equals(filterFeat)) {
+                    aptRow2Visible = true;
+                    break;
+                }
+            }
+            if (!(aptRow2Visible)) {
+                aptRow2.setVisibility(View.GONE);
+                break;
+            }
+            aptRow2.setVisibility(VISIBLE);
         }
 
-        for(int i = 0; i < size3; i++) {
-            feature = sharedPreferences.getString(3+"allFeatures" +i, "");
-            Log.d("apt3 feats", feature);
+        for(int s = 0; s < filters.size(); s++) {
+            aptRow3Visible = false;
+            String filterFeat = filters.get(s);
+            for (int i = 0; i < size3; i++) {
+                feature = sharedPreferences.getString(3 + "allFeatures" + i, "");
+                Log.d("apt3 feats", feature);
+//                if (!(feature.equals(matchFeat))) {
+                if (feature.equals(filterFeat)) {
+                    aptRow3Visible = true;
+                    break;
+                }
+            }
+            if (!(aptRow3Visible)) {
+                aptRow3.setVisibility(View.GONE);
+                break;
+            }
+            aptRow3.setVisibility(VISIBLE);
         }
 
-        editor.clear();
-        editor.commit();
+
+//            for (int i = 0; i < size2; i++) {
+//                feature = sharedPreferences.getString(2 + "allFeatures" + i, "");
+//                Log.d("apt2 feats", feature);
+//                if (feature.equals(matchFeat)) {
+//                    aptRow2.setVisibility(View.VISIBLE);
+//                    break;
+//                }
+//            }
+//
+//            for (int i = 0; i < size3; i++) {
+//                feature = sharedPreferences.getString(3 + "allFeatures" + i, "");
+//                Log.d("apt3 feats", feature);
+//                if (feature.equals(matchFeat)) {
+//                    aptRow3.setVisibility(View.VISIBLE);
+//                    break;
+//                }
+//            }
+
+            Log.d("aptrowvis", aptRow1Visible+"");
+//        if(aptRow1Visible) {
+//            aptRow1.setVisibility(VISIBLE);
+//        }
+
+//
+//        editor.clear();
+//        editor.commit();
 
     }
 
