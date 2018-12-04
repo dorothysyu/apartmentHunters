@@ -66,4 +66,13 @@ public class ExtraNotesActivity extends AppCompatActivity {
         extra.setText(notes);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ExtraNotesActivity.this,
+                ApartmentEditActivity.class));
+        finish();
+
+    }
 }

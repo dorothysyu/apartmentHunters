@@ -106,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this,
                         AddRoommatesActivity.class));
+                finish();
             }
         });
     }

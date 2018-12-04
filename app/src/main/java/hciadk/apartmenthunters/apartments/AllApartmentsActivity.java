@@ -39,6 +39,8 @@ public class AllApartmentsActivity extends AppCompatActivity {
     protected void onStart(){
 
         super.onStart();
+
+        loadPreferences();
     }
 
     @Override
@@ -84,7 +86,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         FilterActivity.class));
 
-                finish();
+//                finish();
             }
         });
 
@@ -95,6 +97,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
 
                 whichApt(1);
+//                finish();
             }
         });
 
@@ -105,6 +108,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
 
                 whichApt(1);
+//                finish();
             }
         });
 
@@ -115,6 +119,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
 
                 whichApt(2);
+//                finish();
             }
         });
 
@@ -125,6 +130,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
 
                 whichApt(2);
+//                finish();
             }
         });
 
@@ -135,6 +141,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
 
                 whichApt(3);
+//                finish();
             }
         });
 
@@ -145,11 +152,10 @@ public class AllApartmentsActivity extends AppCompatActivity {
                         ApartmentEditActivity.class));
 
                 whichApt(3);
+//                finish();
             }
         });
 
-
-        loadPreferences();
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,7 +164,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                     AddApartmentActivity.class));
 
                 savePreferences();
-                finish();
+//                finish();
             }
         });
 
@@ -168,6 +174,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentFinalActivity.class));
                 whichApt(1);
+//                finish();
             }
         });
 
@@ -177,6 +184,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentFinalActivity.class));
                 whichApt(2);
+//                finish();
             }
         });
 
@@ -186,6 +194,7 @@ public class AllApartmentsActivity extends AppCompatActivity {
                 startActivity(new Intent(AllApartmentsActivity.this,
                         ApartmentFinalActivity.class));
                 whichApt(3);
+//                finish();
             }
         });
 
@@ -201,6 +210,8 @@ public class AllApartmentsActivity extends AppCompatActivity {
 //        editor.putBoolean("filterOn", false);
 //
 //        editor.apply();
+
+        getAttributes();
     }
 
     public void whichApt(int aptNum) {
@@ -235,6 +246,44 @@ public class AllApartmentsActivity extends AppCompatActivity {
 //        for(String filter:filters) {
 //            matchFeature(filter);
 //        }
+    }
+
+    public void getAttributes() {
+
+        String name = "filter";
+        SharedPreferences sharedPreferences = getSharedPreferences(name, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        ArrayList<Integer> hasFeature = new ArrayList<>();
+
+        String feature;
+
+        int size1, size2, size3;
+
+        size1 = sharedPreferences.getInt("allFeaturesSize1", 0);
+        size2 = sharedPreferences.getInt("allFeaturesSize2", 0);
+        size3 = sharedPreferences.getInt("allFeaturesSize3", 0);
+
+        Log.d("size", "1:" + size1+ "2:" + size2 + "3:"+size3);
+
+        for(int i = 0; i < size1; i++) {
+            feature = sharedPreferences.getString(1+"allFeatures" +i, "");
+            Log.d("apt1 feats", feature);
+        }
+
+        for(int i = 0; i < size2; i++) {
+            feature = sharedPreferences.getString(2+"allFeatures" +i, "");
+            Log.d("apt2 feats", feature);
+        }
+
+        for(int i = 0; i < size3; i++) {
+            feature = sharedPreferences.getString(3+"allFeatures" +i, "");
+            Log.d("apt3 feats", feature);
+        }
+
+        editor.clear();
+        editor.commit();
+
     }
 
 
@@ -319,5 +368,10 @@ public class AllApartmentsActivity extends AppCompatActivity {
             address = prefs.getString("address"+i, "invalid address");
             desc.get(i).setText(address);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

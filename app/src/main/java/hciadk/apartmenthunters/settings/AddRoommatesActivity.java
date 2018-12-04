@@ -53,6 +53,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AddRoommatesActivity.this,
                         FeaturesActivity.class));
+                finish();
             }
         });
 
@@ -61,6 +62,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AddRoommatesActivity.this,
                         FeaturesActivity.class));
+                finish();
             }
         });
 

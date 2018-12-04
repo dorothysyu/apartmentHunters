@@ -59,6 +59,7 @@ public class FeaturesActivity extends AppCompatActivity {
                     getWantedFeatures();
                     startActivity(new Intent(FeaturesActivity.this,
                             AllApartmentsActivity.class));
+                    finish();
                 }
             }
         });

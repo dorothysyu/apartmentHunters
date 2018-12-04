@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;
@@ -66,12 +67,19 @@ public class ApartmentEditActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          String content = t.getText().toString(); //gets you the contents of edit text
-                                          CheckBox cb = new CheckBox(getApplicationContext());
-                                          cb.setChecked(true);
-                                          cb.setText(content);
-                                          extraChecklist.addView(cb);
-                                          t.setText("");
+                                          if (!(t.getText().toString().equals(""))) {
+                                              String content = t.getText().toString(); //gets you the contents of edit text
+                                              CheckBox cb = new CheckBox(getApplicationContext());
+                                              cb.setChecked(true);
+                                              cb.setText(content);
+                                              extraChecklist.addView(cb);
+                                              t.setText("");
+                                          }
+                                          else {
+                                              Toast.makeText(getApplicationContext(),
+                                                      "Need to input a feature!", Toast.LENGTH_LONG)
+                                                      .show();
+                                          }
                                       }
                                   }
 
@@ -87,9 +95,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
                                       }
                                   }
         );
-
-
-
     }
 
     public void getNecessaryCriteria() {
@@ -166,8 +171,6 @@ public class ApartmentEditActivity extends AppCompatActivity {
     }
 
     public void recheckCheckboxes(View[] checkboxes, boolean[] features) {
-        //LinearLayout ll =
-
 
         int j = 0;
         for (View child:checkboxes) {
@@ -239,6 +242,26 @@ public class ApartmentEditActivity extends AppCompatActivity {
             editor.putInt("aptNum" + aptNum + " price", price);
         }
 
+
+
+        editor.apply();
+
+
+        //all features
+
+
+        String filter = "filter";
+        SharedPreferences filterInfoPreferences = getSharedPreferences(filter, MODE_PRIVATE);
+        editor = filterInfoPreferences.edit();
+
+        editor.putInt("allFeaturesSize"+aptNum, aptFeatures.size());
+        int q = 0;
+        for(String feats:aptFeatures) {
+            Log.d("allFeatures"+aptNum +"aptEditSave", feats);
+            editor.putString(aptNum+"allFeatures"+q, feats);
+            q++;
+        }
+
         editor.apply();
     }
 
@@ -307,8 +330,12 @@ public class ApartmentEditActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        SavePreferences();
         super.onBackPressed();
+
+        SavePreferences();
+        startActivity(new Intent(ApartmentEditActivity.this,
+                AllApartmentsActivity.class));
+
         finish();
     }
 }

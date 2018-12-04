@@ -1,5 +1,6 @@
 package hciadk.apartmenthunters.apartments;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -171,5 +172,15 @@ public class ApartmentFinalActivity extends AppCompatActivity {
         String notes = prefs.getString(MY_PREFS_NAME+aptNum, "");
 
         extra.setText(notes);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(ApartmentFinalActivity.this,
+                AllApartmentsActivity.class));
+
+        finish();
     }
 }
