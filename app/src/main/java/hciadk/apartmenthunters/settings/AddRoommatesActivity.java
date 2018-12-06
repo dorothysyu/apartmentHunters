@@ -74,6 +74,7 @@ public class AddRoommatesActivity extends AppCompatActivity {
                                           textView.setText(content);
                                           ll.addView(textView);
                                           final Button btn = new Button(getApplicationContext());
+                                          btn.setText("remove");
                                           btn.setTextColor(Color.parseColor("#33458C"));
                                           btn.setBackgroundColor(Color.WHITE);
                                           btn.setOnClickListener(new View.OnClickListener() {
